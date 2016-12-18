@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:style="styles" class="spinner"></div>
+  <div v-bind:style="styles" class="spinner spinner--circle-3"></div>
 </template>
 <script>
 export default {
@@ -36,10 +36,10 @@ export default {
     display: inline-block;
     box-sizing: border-box;
     border-radius: 50%;
-    animation: rotate 1s infinite linear;
+    animation: circle-3-rotate 1s infinite linear;
   }
 
-  @keyframes rotate {
+  @keyframes circle-3-rotate {
     0% {
       transform: rotate(0deg);
     }

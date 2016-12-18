@@ -36,9 +36,9 @@ export default {
     border-radius: 100%;
     border: 10px solid rgba(255, 255, 255, 0.2);
 
-    animation: spin 1s infinite linear;
+    animation: circle-2-spin 1s infinite linear;
   }
-  @keyframes spin {
+  @keyframes circle-2-spin {
     100% {
       transform: rotate(360deg);
     }

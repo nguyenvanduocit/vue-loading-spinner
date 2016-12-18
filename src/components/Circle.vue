@@ -1,5 +1,5 @@
 <template>
-  <svg v-bind:style="styles" class="spinner spinner-circle" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+  <svg v-bind:style="styles" class="spinner spinner--circle" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
     <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
   </svg>
 </template>
@@ -26,10 +26,10 @@ export default {
   $duration: 1.4s;
 
   .spinner {
-    animation: rotator $duration linear infinite;
+    animation: circle-rotator $duration linear infinite;
   }
 
-  @keyframes rotator {
+  @keyframes circle-rotator {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(270deg); }
   }
@@ -39,11 +39,11 @@ export default {
     stroke-dashoffset: 0;
     transform-origin: center;
     animation:
-            dash $duration ease-in-out infinite,
-            colors ($duration*4) ease-in-out infinite;
+            circle-dash $duration ease-in-out infinite,
+            circle-colors ($duration*4) ease-in-out infinite;
   }
 
-  @keyframes colors {
+  @keyframes circle-colors {
     0% { stroke: #35495e; }
     25% { stroke: #DE3E35; }
     50% { stroke: #F7C223; }
@@ -51,7 +51,7 @@ export default {
     100% { stroke: #35495e; }
   }
 
-  @keyframes dash {
+  @keyframes circle-dash {
     0% { stroke-dashoffset: $offset; }
     50% {
       stroke-dashoffset: $offset/4;
