@@ -11,10 +11,7 @@
 <script>
 export default {
   props: {
-    width: {
-      default: '50px'
-    },
-    height: {
+    size: {
       default: '40px'
     },
     background: {
@@ -36,8 +33,8 @@ export default {
     },
     styles () {
       return {
-        width: this.width,
-        height: this.height
+        width: this.size,
+        height: this.size
       }
     }
   }
@@ -47,15 +44,13 @@ export default {
 <style lang="scss" scoped>
   .spinner {
     display: inline-block;
-    width: 50px;
-    height: 40px;
     text-align: center;
     font-size: 10px;
   }
 
   .spinner > div {
     height: 100%;
-    width: 6px;
+    width: 10%;
     display: inline-block;
   }
 

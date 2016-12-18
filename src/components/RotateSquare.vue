@@ -5,10 +5,7 @@
 <script>
 export default {
   props: {
-    width: {
-      default: '40px'
-    },
-    height: {
+    size: {
       default: '40px'
     },
     background: {
@@ -22,8 +19,8 @@ export default {
     styles () {
       return {
         backgroundColor: this.background,
-        width: this.width,
-        height: this.height,
+        width: this.size,
+        height: this.size,
         animationName: 'rotateplane',
         animationDuration: this.duration,
         animationTimingFunction: 'ease-in-out',

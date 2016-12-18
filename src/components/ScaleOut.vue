@@ -5,10 +5,7 @@
 <script>
 export default {
   props: {
-    width: {
-      default: '40px'
-    },
-    height: {
+    size: {
       default: '40px'
     },
     background: {
@@ -21,8 +18,8 @@ export default {
   computed: {
     styles () {
       return {
-        width: this.width,
-        height: this.height,
+        width: this.size,
+        height: this.size,
         backgroundColor: this.background,
         animationName: 'sk-scaleout',
         animationDuration: this.duration,
