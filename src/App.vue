@@ -8,6 +8,7 @@
     <scale-out></scale-out>
     <circle-spin></circle-spin>
     <circle-spin-2></circle-spin-2>
+    <circle-spin-3></circle-spin-3>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import CubeGrid from './components/CubeGrid'
 import ScaleOut from './components/ScaleOut'
 import CircleSpin from './components/Circle'
 import CircleSpin2 from './components/Circle2'
+import CircleSpin3 from './components/Circle3'
 export default {
   name: 'app',
   components: {
@@ -30,7 +32,8 @@ export default {
     CubeGrid,
     ScaleOut,
     CircleSpin,
-    CircleSpin2
+    CircleSpin2,
+    CircleSpin3
   }
 }
 </script>
