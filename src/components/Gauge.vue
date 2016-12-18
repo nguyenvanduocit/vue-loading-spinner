@@ -1,27 +1,14 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--gauge"></div>
+  <div class="spinner spinner--gauge"></div>
 </template>
 <script>
-export default {
-  props: {
-    size: {
-      default: '60px'
-    }
-  },
-  computed: {
-    styles () {
-      let size = parseInt(this.size)
-      return {
-        width: this.size,
-        height: size / 2 + 'px'
-      }
-    }
-  }
-}
+export default {}
 </script>
 <style lang="scss" scoped>
   /*  hides this rule from IE9 and below */
   .spinner {
+    width: 60px;
+    height: 30px;
     background: #6ca;
     -moz-border-radius-topleft: 32px;
     -webkit-border-top-left-radius: 32px;

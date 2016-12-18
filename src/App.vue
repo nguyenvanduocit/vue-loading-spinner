@@ -112,7 +112,7 @@ export default {
   },
   data () {
     return {
-      size: '50px'
+      size: '40px'
     }
   }
 }
