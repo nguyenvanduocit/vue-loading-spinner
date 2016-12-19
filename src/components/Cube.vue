@@ -45,8 +45,8 @@ export default {
   }
 
   .cube1, .cube2 {
-    width: 15px;
-    height: 15px;
+    width: 25%;
+    height: 25%;
     position: absolute;
     top: 0;
     left: 0;
@@ -59,18 +59,28 @@ export default {
 
   @keyframes sk-cubemove {
     25% {
-      transform: translateX(20px) rotate(-90deg) scale(0.5);
+      top: 0;
+      left: calc(100% - 25%);
+      transform: rotate(-90deg) scale(0.5);
     }
     50% {
-      transform: translateX(20px) translateY(20px) rotate(-179deg);
+      top: calc(100% - 25%);
+      left: calc(100% - 25%);
+      transform: rotate(-179deg);
     }
     50.1% {
-      transform: translateX(20px) translateY(20px) rotate(-180deg);
+      top: calc(100% - 25%);
+      left: calc(100% - 25%);
+      transform: rotate(-180deg);
     }
     75% {
-      transform: translateX(0px) translateY(20px) rotate(-270deg) scale(0.5);
+      top: calc(100% - 25%);
+      left: 0;
+      transform: rotate(-270deg) scale(0.5);
     }
     100% {
+      top: 0;
+      left: 0;
       transform: rotate(-360deg);
     }
   }
