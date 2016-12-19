@@ -506,7 +506,7 @@ export default {
     99.259259% { transform: matrix3d(1, 0, 0, 0, -0.49858, 0.0001, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1); }
     100% { transform: scaleY(0) skewX(-26.5px); }
   }
-  spinner {
+  .spinner {
     animation: circle-6-rotateAll 4.5s linear infinite both;
   }
 
