@@ -75,7 +75,7 @@ export default {
   },
   data () {
     return {
-      size: '50px',
+      size: '60px',
       spinners: [
         'RotateSquare',
         'RotateSquare2',
