@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="header">
-      <h1 class="header--title">vue-loading-spinner v1.0.0</h1>
+      <h1 class="header--title">vue-loading-spinner v1.0</h1>
     </div>
     <div class="spinner-list">
       <div class="spinner-container" v-for="spinner in spinners">
