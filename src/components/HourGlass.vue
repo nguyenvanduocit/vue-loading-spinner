@@ -47,6 +47,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
   .hourglass{
     display:block;

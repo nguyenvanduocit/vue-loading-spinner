@@ -41,6 +41,10 @@ export default {
 
   .spinner {
     position: relative;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
     .diamond {
       position: absolute;
       left: 0;

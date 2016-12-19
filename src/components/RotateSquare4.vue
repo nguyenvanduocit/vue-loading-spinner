@@ -30,6 +30,10 @@ export default {
     position: relative;
     border: 4px solid #41b883;
     animation: loader 2s infinite ease;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
 
   .loader-inner {

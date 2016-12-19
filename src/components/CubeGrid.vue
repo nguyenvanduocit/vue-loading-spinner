@@ -48,6 +48,10 @@ export default {
 <style lang="scss" scoped>
   .spinner {
     display: inline-block;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
 
   .sk-cube {

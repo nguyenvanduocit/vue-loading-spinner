@@ -45,6 +45,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    * {
+      box-sizing: border-box;
+    }
   }
   .cube {
     width: 80px;

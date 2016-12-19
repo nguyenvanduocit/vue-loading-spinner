@@ -40,6 +40,10 @@ export default {
   .spinner {
     height: 40px;
     width: 40px;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
 
   .b0 {

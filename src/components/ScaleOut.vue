@@ -34,7 +34,11 @@ export default {
 <style lang="scss" scoped>
   .spinner {
     border-radius: 100%;
-      display: inline-block;
+    display: inline-block;
+    * {
+        line-height: 0;
+        box-sizing: border-box;
+    }
   }
   @keyframes sk-scaleout {
     0% {

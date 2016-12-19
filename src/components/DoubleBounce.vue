@@ -22,7 +22,7 @@ export default {
     bounceStyle () {
       return {
         backgroundColor: this.background,
-        animationName: 'bounce',
+        animationName: 'double-bounce',
         animationDuration: this.duration,
         animationTimingFunction: 'ease-in-out',
         animationIterationCount: 'infinite'
@@ -42,6 +42,10 @@ export default {
   .spinner {
     position: relative;
     display: inline-block;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
 
   .double-bounce1, .double-bounce2 {
@@ -58,7 +62,7 @@ export default {
     animation-delay: -1.0s;
   }
 
-  @keyframes bounce {
+  @keyframes double-bounce {
     0%, 100% {
      transform: scale(0.0);
     }

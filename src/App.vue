@@ -17,6 +17,7 @@ import RotateSquare from './components/RotateSquare'
 import RotateSquare2 from './components/RotateSquare2'
 import RotateSquare3 from './components/RotateSquare3'
 import RotateSquare4 from './components/RotateSquare4'
+import RotateSquare5 from './components/RotateSquare5'
 import DoubleBounce from './components/DoubleBounce'
 import Stretch from './components/Stretch'
 import Cube from './components/Cube'
@@ -29,6 +30,10 @@ import CircleSpin3 from './components/Circle3'
 import CircleSpin4 from './components/Circle4'
 import CircleSpin5 from './components/Circle5'
 import CircleSpin6 from './components/Circle6'
+import CircleSpin7 from './components/Circle7'
+import CircleSpin8 from './components/Circle8'
+import CircleSpin9 from './components/Circle9'
+import CircleSpin10 from './components/Circle10'
 import ThreeDots from './components/ThreeDots'
 import GoogleSpin from './components/Google'
 import Gauge from './components/Gauge'
@@ -41,6 +46,8 @@ import Jawn from './components/Jawn'
 import LetterCube from './components/LetterCube'
 import PingPong from './components/PingPong'
 import Diamond from './components/Diamond'
+import SpinLine from './components/SpinLine'
+import Plane from './components/Plane'
 export default {
   name: 'app',
   components: {
@@ -48,6 +55,7 @@ export default {
     RotateSquare2,
     RotateSquare3,
     RotateSquare4,
+    RotateSquare5,
     DoubleBounce,
     Stretch,
     Cube,
@@ -60,6 +68,10 @@ export default {
     CircleSpin4,
     CircleSpin5,
     CircleSpin6,
+    CircleSpin7,
+    CircleSpin8,
+    CircleSpin9,
+    CircleSpin10,
     ThreeDots,
     GoogleSpin,
     Gauge,
@@ -71,7 +83,9 @@ export default {
     Jawn,
     LetterCube,
     PingPong,
-    Diamond
+    Diamond,
+    SpinLine,
+    Plane
   },
   data () {
     return {
@@ -81,6 +95,7 @@ export default {
         'RotateSquare2',
         'RotateSquare3',
         'RotateSquare4',
+        'RotateSquare5',
         'DoubleBounce',
         'Stretch',
         'Cube',
@@ -93,6 +108,10 @@ export default {
         'CircleSpin4',
         'CircleSpin5',
         'CircleSpin6',
+        'CircleSpin7',
+        'CircleSpin8',
+        'CircleSpin9',
+        'CircleSpin10',
         'ThreeDots',
         'GoogleSpin',
         'Gauge',
@@ -104,7 +123,9 @@ export default {
         'Jawn',
         'LetterCube',
         'PingPong',
-        'Diamond'
+        'Diamond',
+        'SpinLine',
+        'Plane'
       ]
     }
   }
@@ -123,6 +144,7 @@ export default {
   .header--title{
     color: #41b883;
     font-size: 35px;
+    font-weight: normal;
   }
 }
 .spinner-list{
@@ -144,7 +166,7 @@ export default {
   .name{
     margin-top: 10px;
     color: #41b883;
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 </style>

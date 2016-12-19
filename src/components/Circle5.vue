@@ -28,8 +28,10 @@ export default {
     border-radius: 50%;
     overflow: hidden;
     text-indent: -9999px;
-    /* Hides inner circles outside base circle at safari */
-    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
   .spinner:before, .spinner:after {
     content: '';

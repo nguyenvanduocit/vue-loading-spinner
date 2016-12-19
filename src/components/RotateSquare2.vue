@@ -26,6 +26,10 @@ export default {
 <style lang="scss" scoped>
   .spinner {
     position: relative;
+    * {
+        line-height: 0;
+        box-sizing: border-box;
+    }
     &:before {
       content: '';
       width: 100%;

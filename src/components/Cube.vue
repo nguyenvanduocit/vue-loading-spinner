@@ -42,6 +42,10 @@ export default {
   .spinner {
     display: inline-block;
     position: relative;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
 
   .cube1, .cube2 {

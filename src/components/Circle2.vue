@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner-circle-2"></div>
+  <div v-bind:style="styles" class="spinner spinner--circle-2"></div>
 </template>
 <script>
 export default {
@@ -37,6 +37,10 @@ export default {
     border: 10px solid rgba(255, 255, 255, 0.2);
 
     animation: circle-2-spin 1s infinite linear;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
   @keyframes circle-2-spin {
     100% {

@@ -46,6 +46,10 @@ export default {
     display: inline-block;
     text-align: center;
     font-size: 10px;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
 
   .spinner > div {

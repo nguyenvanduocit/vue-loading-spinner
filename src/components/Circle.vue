@@ -27,6 +27,10 @@ export default {
 
   .spinner {
     animation: circle-rotator $duration linear infinite;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
 
   @keyframes circle-rotator {

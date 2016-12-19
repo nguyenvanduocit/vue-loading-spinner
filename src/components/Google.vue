@@ -30,6 +30,10 @@ export default {
     transform: rotateZ(90deg);
     transform-origin: 50% 50%;
     animation: plus-loader-background 3s infinite ease-in-out;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
   .spinner::after {
     background: #f86;

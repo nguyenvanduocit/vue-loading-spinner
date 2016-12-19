@@ -26,7 +26,10 @@ export default {
     border-top-color: #A04668;
     border-radius: 50%;
     animation: circle-4-spin 2s linear infinite;
-
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
     &:before, &:after{
       content:'';
       box-sizing: border-box;

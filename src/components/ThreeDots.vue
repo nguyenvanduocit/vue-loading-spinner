@@ -42,6 +42,10 @@ export default {
     position: relative;
     display: inline-block;
     box-sizing: border-box;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
     .blob {
       box-sizing: border-box;
       position: absolute;

@@ -37,6 +37,10 @@ export default {
     box-sizing: border-box;
     border-radius: 50%;
     animation: circle-3-rotate 1s infinite linear;
+    * {
+      line-height: 0;
+      box-sizing: border-box;
+    }
   }
 
   @keyframes circle-3-rotate {
