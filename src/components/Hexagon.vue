@@ -1,30 +1,56 @@
 <template>
-  <div class="spinner spinner--hexagon">
-    <ul class="hexagon-container">
-      <li class="hexagon hex_1"></li>
-      <li class="hexagon hex_2"></li>
-      <li class="hexagon hex_3"></li>
-      <li class="hexagon hex_4"></li>
-      <li class="hexagon hex_5"></li>
-      <li class="hexagon hex_6"></li>
-      <li class="hexagon hex_7"></li>
-    </ul>
+  <div v-bind:style="styles" class="spinner spinner--hexagon">
+    <div v-bind:style="innerStyles" class="spinner-inner">
+      <ul class="hexagon-container">
+        <li class="hexagon hex_1"></li>
+        <li class="hexagon hex_2"></li>
+        <li class="hexagon hex_3"></li>
+        <li class="hexagon hex_4"></li>
+        <li class="hexagon hex_5"></li>
+        <li class="hexagon hex_6"></li>
+        <li class="hexagon hex_7"></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    size: {
+      default: '40px'
+    }
+  },
+  computed: {
+    innerStyles () {
+      let size = parseInt(this.size)
+      return {
+        transform: 'scale(' + (size / 164) + ')'
+      }
+    },
+    styles () {
+      return {
+        width: this.size,
+        height: this.size
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-  .spinner {
+  .spinner{
+    overflow: hidden;
+  }
+  .spinner-inner {
     position: relative;
     width: 160px;
     height: 160px;
     background-color: transparent;
     border-radius: 50%;
     border: 2px solid #a5a69e;
-    // animation: hexagon-rotate3 3s linear infinite;
+    transform-origin: top left;
+    display: block;
     &:before {
       content: '';
       width: 164px;

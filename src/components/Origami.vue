@@ -1,13 +1,38 @@
 <template>
-  <div class="spinner loading spinner-origami">
-    <span class="slice"></span>
-    <span class="slice"></span>
-    <span class="slice"></span>
-    <span class="slice"></span>
-    <span class="slice"></span>
-    <span class="slice"></span>
+  <div v-bind:style="styles" class="spinner spinner-origami">
+    <div v-bind:style="innerStyles" class="spinner-inner loading">
+      <span class="slice"></span>
+      <span class="slice"></span>
+      <span class="slice"></span>
+      <span class="slice"></span>
+      <span class="slice"></span>
+      <span class="slice"></span>
+    </div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    size: {
+      default: '40px'
+    }
+  },
+  computed: {
+    innerStyles () {
+      let size = parseInt(this.size)
+      return {
+        transform: 'scale(' + (size / 60) + ')'
+      }
+    },
+    styles () {
+      return {
+        width: this.size,
+        height: this.size
+      }
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
   @for $i from 1 through 6 {
     @keyframes origami-show-#{$i}{
@@ -46,28 +71,20 @@
     }
   }
 
-  @keyframes origami-flip{
-    0%{
-      transform: rotateY(0deg) rotateZ(-60deg);
-    }
-    100%{
-      transform: rotateY(360deg) rotateZ(-60deg);
-    }
-  }
-
   .spinner{
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spinner-inner{
     display: block;
-    width: 3.75em;
-    height: 4.25em;
-    transform-origin: center center;
-    transform: rotateY(180deg) rotateZ(-60deg);
-
+    width: 60px;
+    height: 68px;
     .slice{
-      border-top: 1.125em solid transparent;
+      border-top: 18px solid transparent;
       border-right: none;
-      border-bottom: 1em solid transparent;
-      border-left: 1.875em solid #f7484e;
+      border-bottom: 16px solid transparent;
+      border-left: 30px solid #f7484e;
       position: absolute;
       top: 0px;
       left: 50%;
@@ -84,7 +101,6 @@
 
 
     &.loading{
-      animation: 2s origami-flip steps(2) infinite both;
       @for $i from 1 through 6 {
         .slice:nth-child(#{$i}) {
           transform: rotateZ(60* $i + deg) rotateY(90deg) rotateX(0);

@@ -1,27 +1,51 @@
 <template>
-  <div class="spinner spinner--gauge"></div>
+  <div :style="styles" class="spinner spinner--gauge">
+    <div :style="innerStyles" class="spinner-inner"></div>
+  </div>
 </template>
 <script>
-export default {}
+export default {
+  props: {
+    size: {
+      default: '40px'
+    }
+  },
+  computed: {
+    innerStyles () {
+      let size = parseInt(this.size)
+      return {
+        transform: 'scale(' + (size / 60) + ')'
+      }
+    },
+    styles () {
+      let size = parseInt(this.size)
+      return {
+        width: this.size,
+        height: size / 2 + 'px'
+      }
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
-  /*  hides this rule from IE9 and below */
-  .spinner {
+  .spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spinner-inner {
     width: 60px;
     height: 30px;
+    flex-shrink: 0;
     background: #6ca;
-    -moz-border-radius-topleft: 32px;
-    -webkit-border-top-left-radius: 32px;
     border-top-left-radius: 32px;
-    -moz-border-radius-topright: 32px;
-    -webkit-border-top-right-radius: 32px;
     border-top-right-radius: 32px;
     display: inline-block;
     overflow: hidden;
     position: relative;
     text-indent: -9999px;
   }
-  .spinner::before {
+  .spinner-inner::before {
     animation: gauge-spinner 4000ms infinite ease;
     background: white;
     border-radius: 2px;
@@ -33,7 +57,7 @@ export default {}
     height: 26.66667px;
     transform-origin: 50% 100%;
   }
-  .spinner::after {
+  .spinner-inner::after {
     content: '';
     background: white;
     border-radius: 8px;
