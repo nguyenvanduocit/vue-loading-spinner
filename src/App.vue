@@ -1,65 +1,12 @@
 <template>
   <div id="app">
+    <div class="header">
+      <h1 class="header--title">vue-loading-spinner v1.0.0</h1>
+    </div>
     <div class="spinner-list">
-      <div class="spinner-container">
-        <rotate-square :size="size"></rotate-square>
-      </div>
-      <div class="spinner-container">
-        <rotate-square-2 :size="size"></rotate-square-2>
-      </div>
-      <div class="spinner-container">
-        <double-bounce :size="size"></double-bounce>
-      </div>
-      <div class="spinner-container">
-        <stretch :size="size"></stretch>
-      </div>
-      <div class="spinner-container">
-        <cube :size="size"></cube>
-      </div>
-      <div class="spinner-container">
-        <cube-grid :size="size"></cube-grid>
-      </div>
-      <div class="spinner-container">
-        <cube-shadow :size="size"></cube-shadow>
-      </div>
-      <div class="spinner-container">
-        <scale-out :size="size"></scale-out>
-      </div>
-      <div class="spinner-container">
-        <circle-spin :size="size"></circle-spin>
-      </div>
-      <div class="spinner-container">
-        <circle-spin-2 :size="size"></circle-spin-2>
-      </div>
-      <div class="spinner-container">
-        <circle-spin-3 :size="size"></circle-spin-3>
-      </div>
-      <div class="spinner-container">
-        <circle-spin-4 :size="size"></circle-spin-4>
-      </div>
-      <div class="spinner-container">
-        <circle-spin-5 :size="size"></circle-spin-5>
-      </div>
-      <div class="spinner-container">
-        <circle-spin-6 :size="size"></circle-spin-6>
-      </div>
-      <div class="spinner-container">
-        <three-dots :size="size"></three-dots>
-      </div>
-      <div class="spinner-container">
-        <google-spin :size="size"></google-spin>
-      </div>
-      <div class="spinner-container">
-        <gauge :size="size"></gauge>
-      </div>
-      <div class="spinner-container">
-        <origami :size="size"></origami>
-      </div>
-      <div class="spinner-container">
-        <hexagon :size="size"></hexagon>
-      </div>
-      <div class="spinner-container">
-        <socket :size="size"></socket>
+      <div class="spinner-container" v-for="spinner in spinners">
+        <component :is="spinner" :size="size"></component>
+        <div class="name" v-text="spinner"></div>
       </div>
     </div>
   </div>
@@ -112,34 +59,68 @@ export default {
   },
   data () {
     return {
-      size: '40px'
+      size: '40px',
+      spinners: [
+        'RotateSquare',
+        'RotateSquare2',
+        'DoubleBounce',
+        'Stretch',
+        'Cube',
+        'CubeGrid',
+        'CubeShadow',
+        'ScaleOut',
+        'CircleSpin',
+        'CircleSpin2',
+        'CircleSpin3',
+        'CircleSpin4',
+        'CircleSpin5',
+        'CircleSpin6',
+        'ThreeDots',
+        'GoogleSpin',
+        'Gauge',
+        'Origami',
+        'Hexagon',
+        'Socket'
+      ]
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-body{
-  margin: 0;
-  padding: 0;
-}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+.header{
+  .header--title{
+    color: #41b883;
+    font-size: 35px;
+  }
 }
 .spinner-list{
-  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .spinner-container{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 250px;
-  width: 100vw;
+  min-height: 250px;
+  min-width: 250px;
+  width: 25%;
   overflow: hidden;
+  .name{
+    margin-top: 10px;
+    color: #41b883;
+    font-size: 20px;
+  }
 }
 </style>
