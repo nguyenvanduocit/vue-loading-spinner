@@ -8,8 +8,6 @@
         </div>
         <div class="ball">
         </div>
-        <div class="ballhit">
-        </div>
       </div>
     </div>
   </div>
@@ -74,23 +72,13 @@ export default {
     right:0;
     animation: pingpong-position2 2s linear infinite;
   }
-  .ball,
-  .ballhit {
+  .ball{
     width:15px;
     height:15px;
     border-radius:50%;
     background:#41b883;
     position:absolute;
     animation: pingpong-bounce 2s linear infinite;
-  }
-  .ballhit {
-    padding:4px;
-    margin:-6px 0 0 -6px;
-    border-radius:50%;
-    background:#41b883;
-    border:2px #41b883 solid;
-    z-index:-1;
-    animation: pingpong-bounce2 2s linear infinite;
   }
   @keyframes pingpong-position1 {
     0% {top:-60px;}
@@ -112,16 +100,5 @@ export default {
     50% {top:75px;left:10px;}
     75% {top:-35px;left:225px;}
     100% {top:-35px;left:10px;}
-  }
-  @keyframes pingpong-bounce2 {
-    0% {top:-35px;left:10px; border:2px cornflowerblue solid;}
-    24% {border:2px cornflowerblue solid;}
-    25% {top:25px;left:225px; border:2px #41b883 solid;}
-    49% {border:2px cornflowerblue solid;}
-    50% {top:75px;left:10px; border:2px #41b883 solid;}
-    74% {border:2px cornflowerblue solid;}
-    75% {top:-35px;left:225px; border:2px #41b883 solid;}
-    99% {border:2px cornflowerblue solid;}
-    100% {top:-35px;left:10px; border:2px #41b883 solid;}
   }
 </style>
