@@ -120,7 +120,7 @@ export default {
   .name{
     margin-top: 10px;
     color: #41b883;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 </style>
