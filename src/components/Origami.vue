@@ -38,13 +38,13 @@ export default {
     @keyframes origami-show-#{$i}{
       from{
         transform: rotateZ(60* $i + deg) rotateY(-90deg) rotateX(0deg);
-        border-left-color: #9c2f2f;
+        border-left-color: #31855e;
       }
     }
     @keyframes origami-hide-#{$i}{
       to{
         transform: rotateZ(60* $i + deg) rotateY(-90deg) rotateX(0deg);
-        border-left-color: #9c2f2f;
+        border-left-color: #31855e;
       }
     }
 
@@ -55,18 +55,18 @@ export default {
 
       #{$startIndex * 1%}{
         transform: rotateZ(60* $i + deg) rotateY(90deg) rotateX(0deg);
-        border-left-color: #9c2f2f;
+        border-left-color: #31855e;
       }
       #{$startIndex + 5%},
       #{$reverseIndex * 1%}{
         transform: rotateZ(60* $i + deg) rotateY(0) rotateX(0deg);
-        border-left-color: #f7484e;
+        border-left-color: #41b883;
       }
 
       #{$reverseIndex + 5%},
       100%{
         transform: rotateZ(60* $i + deg) rotateY(90deg) rotateX(0deg);
-        border-left-color: #9c2f2f;
+        border-left-color: #31855e;
       }
     }
   }

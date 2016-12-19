@@ -26,14 +26,14 @@ export default {
     text-indent: -9999px;
     display: inline-block;
     background: #f86;
-    border-radius: 24px;
+    border-radius: 50%;
     transform: rotateZ(90deg);
     transform-origin: 50% 50%;
     animation: plus-loader-background 3s infinite ease-in-out;
   }
   .spinner::after {
     background: #f86;
-    border-radius: 24px 0 0 24px;
+    border-radius: 50% 0 0 50%;
     content: '';
     position: absolute;
     right: 50%;
@@ -45,7 +45,7 @@ export default {
   }
   .spinner::before {
     background: #fc6;
-    border-radius: 24px 0 0 24px;
+    border-radius: 50% 0 0 50%;
     content: '';
     position: absolute;
     right: 50%;

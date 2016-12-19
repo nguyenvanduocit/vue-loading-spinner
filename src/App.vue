@@ -15,6 +15,8 @@
 <script>
 import RotateSquare from './components/RotateSquare'
 import RotateSquare2 from './components/RotateSquare2'
+import RotateSquare3 from './components/RotateSquare3'
+import RotateSquare4 from './components/RotateSquare4'
 import DoubleBounce from './components/DoubleBounce'
 import Stretch from './components/Stretch'
 import Cube from './components/Cube'
@@ -33,11 +35,19 @@ import Gauge from './components/Gauge'
 import Origami from './components/Origami'
 import Hexagon from './components/Hexagon'
 import Socket from './components/Socket'
+import HourGlass from './components/HourGlass'
+import Pencil from './components/Pencil'
+import Jawn from './components/Jawn'
+import LetterCube from './components/LetterCube'
+import PingPong from './components/PingPong'
+import Diamond from './components/Diamond'
 export default {
   name: 'app',
   components: {
     RotateSquare,
     RotateSquare2,
+    RotateSquare3,
+    RotateSquare4,
     DoubleBounce,
     Stretch,
     Cube,
@@ -55,7 +65,13 @@ export default {
     Gauge,
     Hexagon,
     Socket,
-    Origami
+    Origami,
+    HourGlass,
+    Pencil,
+    Jawn,
+    LetterCube,
+    PingPong,
+    Diamond
   },
   data () {
     return {
@@ -63,6 +79,8 @@ export default {
       spinners: [
         'RotateSquare',
         'RotateSquare2',
+        'RotateSquare3',
+        'RotateSquare4',
         'DoubleBounce',
         'Stretch',
         'Cube',
@@ -80,7 +98,13 @@ export default {
         'Gauge',
         'Origami',
         'Hexagon',
-        'Socket'
+        'Socket',
+        'HourGlass',
+        'Pencil',
+        'Jawn',
+        'LetterCube',
+        'PingPong',
+        'Diamond'
       ]
     }
   }

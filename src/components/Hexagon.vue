@@ -57,7 +57,7 @@ export default {
       height: 164px;
       display: block;
       position: absolute;
-      border: 2px solid #41b883;
+      border: 7px solid #41b883;
       border-radius: 50%;
       top: -2px;
       left: -2px;
