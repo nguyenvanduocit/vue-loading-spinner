@@ -429,7 +429,7 @@ export default {
     97.777778% { transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00036, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1); }
     98.518519% { transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00019, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1); }
     99.259259% { transform: matrix3d(1, 0, 0, 0, 0.49858, 0.0001, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1); }
-    100% { transform: scaleY(0) skewX(26.5px); }
+    100% { transform: scaleY(0) skewX(26.5deg); }
   }
 
   /* Generated with Bounce.js. Edit at http://goo.gl/taI49K */
@@ -504,7 +504,7 @@ export default {
     97.777778% { transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00036, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1); }
     98.518519% { transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00019, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1); }
     99.259259% { transform: matrix3d(1, 0, 0, 0, -0.49858, 0.0001, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1); }
-    100% { transform: scaleY(0) skewX(-26.5px); }
+    100% { transform: scaleY(0) skewX(-26.5deg); }
   }
   .spinner {
     animation: circle-6-rotateAll 4.5s linear infinite both;
