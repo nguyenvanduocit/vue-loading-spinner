@@ -22,10 +22,7 @@ export default {
     bounceStyle () {
       return {
         backgroundColor: this.background,
-        animationName: 'double-bounce',
-        animationDuration: this.duration,
-        animationTimingFunction: 'ease-in-out',
-        animationIterationCount: 'infinite'
+        animationDuration: this.duration
       }
     },
     styles () {
@@ -56,6 +53,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+    animation: double-bounce 2.0s ease-in-out infinite;
   }
 
   .double-bounce2 {

@@ -32,27 +32,22 @@ export default {
   .spinner > div {
     background-color: #41b883;
     border-radius: 100%;
-    -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     position: absolute;
     opacity: 0;
     width: 50px;
     height: 50px;
-    -webkit-animation: jumper 1s 0s linear infinite;
     animation: jumper 1s 0s linear infinite;
   }
   .spinner > div:nth-child(2) {
-    -webkit-animation-delay: 0.33333s;
     animation-delay: 0.33333s;
   }
   .spinner > div:nth-child(3) {
-    -webkit-animation-delay: 0.66666s;
     animation-delay: 0.66666s;
   }
   @keyframes jumper {
     0% {
       opacity: 0;
-      -webkit-transform: scale(0);
       transform: scale(0);
     }
     5% {

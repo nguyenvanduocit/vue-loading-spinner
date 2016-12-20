@@ -36,8 +36,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $base: #1C78C5; $accent: #41b883;
-  $duration: 1500ms; $timing: linear;
+  $accent: #41b883;
+  $duration: 1500ms;
+  $timing: linear;
 
   .spinner {
     position: relative;

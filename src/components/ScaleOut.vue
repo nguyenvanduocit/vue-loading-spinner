@@ -21,10 +21,7 @@ export default {
         width: this.size,
         height: this.size,
         backgroundColor: this.background,
-        animationName: 'sk-scaleout',
-        animationDuration: this.duration,
-        animationTimingFunction: 'ease-in-out',
-        animationIterationCount: 'infinite'
+        animationDuration: this.duration
       }
     }
   }
@@ -35,10 +32,7 @@ export default {
   .spinner {
     border-radius: 100%;
     display: inline-block;
-    * {
-        line-height: 0;
-        box-sizing: border-box;
-    }
+    animation: sk-scaleout 1s ease-in-out infinite;
   }
   @keyframes sk-scaleout {
     0% {

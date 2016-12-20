@@ -10,9 +10,6 @@ export default {
   props: {
     size: {
       default: '40px'
-    },
-    color: {
-      default: '#41b883'
     }
   },
   computed: {

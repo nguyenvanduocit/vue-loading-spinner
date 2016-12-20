@@ -21,10 +21,7 @@ export default {
         backgroundColor: this.background,
         width: this.size,
         height: this.size,
-        animationName: 'rotateplane',
-        animationDuration: this.duration,
-        animationTimingFunction: 'ease-in-out',
-        animationIterationCount: 'infinite'
+        animationDuration: this.duration
       }
     }
   }
@@ -34,10 +31,7 @@ export default {
 <style lang="scss" scoped>
   .spinner{
     display: inline-block;
-    * {
-      line-height: 0;
-      box-sizing: border-box;
-    }
+    animation: rotateplane 1.2s infinite ease-in-out;
   }
   @keyframes rotateplane {
     0% {

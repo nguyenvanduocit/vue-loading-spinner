@@ -23,9 +23,7 @@ export default {
       return {
         backgroundColor: this.background,
         animationName: 'sk-cubemove',
-        animationDuration: this.duration,
-        animationTimingFunction: 'ease-in-out',
-        animationIterationCount: 'infinite'
+        animationDuration: this.duration
       }
     },
     styles () {
@@ -54,7 +52,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-
+    animation: sk-cubemove 1.8s ease-in-out infinite;
   }
 
   .cube2 {

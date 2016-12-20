@@ -69,7 +69,6 @@ export default {
     height:100%;
     position:absolute;
     transform : translate3d(0px,0,0);
-    /*transition: all 0.8s ease; */
     z-index:100;
     perspective: 1000;
     backface-visibility: hidden;

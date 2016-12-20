@@ -29,10 +29,6 @@ export default {
     background-position: 0% 0%;
     animation: spTexture 1s infinite linear;
   }
-  @-webkit-keyframes spTexture {
-    from { background-position: 0px 0px; }
-    to { background-position: -16px 0px; }
-  }
   @keyframes spTexture {
     from { background-position: 0px 0px; }
     to { background-position: -16px 0px; }

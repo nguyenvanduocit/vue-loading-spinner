@@ -48,15 +48,27 @@ export default {
   }
 
   @keyframes circle-colors {
-    0% { stroke: #35495e; }
-    25% { stroke: #DE3E35; }
-    50% { stroke: #F7C223; }
-    75% { stroke: #41b883; }
-    100% { stroke: #35495e; }
+    0% {
+      stroke: #35495e;
+    }
+    25% {
+      stroke: #DE3E35;
+    }
+    50% {
+      stroke: #F7C223;
+    }
+    75% {
+      stroke: #41b883;
+    }
+    100% {
+      stroke: #35495e;
+    }
   }
 
   @keyframes circle-dash {
-    0% { stroke-dashoffset: $offset; }
+    0% {
+      stroke-dashoffset: $offset;
+    }
     50% {
       stroke-dashoffset: $offset/4;
       transform:rotate(135deg);

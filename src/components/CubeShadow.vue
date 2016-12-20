@@ -21,10 +21,7 @@ export default {
         width: this.size,
         height: this.size,
         backgroundColor: this.background,
-        animationName: 'cube-shadow-spinner',
-        animationDuration: this.duration,
-        animationTimingFunction: 'cubic-bezier(0.75, 0, 0.5, 1)',
-        animationIterationCount: 'infinite'
+        animationDuration: this.duration
       }
     }
   }
@@ -32,6 +29,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .spinner{
+    animation: cube-shadow-spinner 1.8s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+  }
   @keyframes cube-shadow-spinner {
     50% {
       border-radius: 50%;

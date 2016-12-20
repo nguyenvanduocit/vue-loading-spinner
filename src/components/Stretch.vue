@@ -25,10 +25,7 @@ export default {
     rectStyles () {
       return {
         backgroundColor: this.background,
-        animationName: 'sk-stretchdelay',
-        animationDuration: this.duration,
-        animationTimingFunction: 'ease-in-out',
-        animationIterationCount: 'infinite'
+        animationDuration: this.duration
       }
     },
     styles () {
@@ -51,7 +48,9 @@ export default {
       box-sizing: border-box;
     }
   }
-
+  .rect{
+    animation: sk-stretchdelay 1.2s ease-in-out infinite;
+  }
   .spinner > div {
     height: 100%;
     width: 10%;

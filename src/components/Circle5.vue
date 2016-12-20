@@ -19,19 +19,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  /*  hides this rule from IE9 and below */
   .spinner {
     transform: translate3d(0, 0, 0);
     position: relative;
-    display: inline-block;
     background: rgba(25, 165, 152, 0.5);
     border-radius: 50%;
     overflow: hidden;
-    text-indent: -9999px;
-    * {
-      line-height: 0;
-      box-sizing: border-box;
-    }
   }
   .spinner:before, .spinner:after {
     content: '';

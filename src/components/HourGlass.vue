@@ -19,15 +19,8 @@ export default {
   computed: {
     innerStyles () {
       let size = parseInt(this.size)
-      let baseSize = 64
-      let ratio = 1
-      if (size > baseSize) {
-        ratio = baseSize / size
-      } else {
-        ratio = size / baseSize
-      }
       return {
-        transform: 'scale(' + ratio + ')'
+        transform: 'scale(' + (size / 64) + ')'
       }
     },
     styles () {

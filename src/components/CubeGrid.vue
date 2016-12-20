@@ -29,10 +29,7 @@ export default {
     cubeStyles () {
       return {
         backgroundColor: this.background,
-        animationName: 'sk-cubeGridScaleDelay',
-        animationDuration: this.duration,
-        animationTimingFunction: 'ease-in-out',
-        animationIterationCount: 'infinite'
+        animationDuration: this.duration
       }
     },
     styles () {
@@ -58,6 +55,7 @@ export default {
     width: 33%;
     height: 33%;
     float: left;
+    animation: sk-cubeGridScaleDelay 1.8s ease-in-out infinite;
   }
 
   .sk-cube1 {

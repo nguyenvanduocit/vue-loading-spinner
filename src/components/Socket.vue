@@ -243,26 +243,20 @@ export default {
     animation-name: socket-fade;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    -webkit-animation-name: socket-fade;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
   }
 
   .h2{
     transform: rotate(60deg);
-    -webkit-transform: rotate(60deg);
   }
 
   .h3{
     transform: rotate(-60deg);
-    -webkit-transform: rotate(-60deg);
   }
 
   .gel{
     height: 30px;
     width: 30px;
     transition: all .3s;
-    -webkit-transition: all .3s;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -275,9 +269,6 @@ export default {
     animation-name: socket-pulse;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    -webkit-animation-name: socket-pulse;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
   }
 
   .c1{
@@ -469,10 +460,6 @@ export default {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-delay: .2s;
-    -webkit-animation-name: socket-pulse;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .2s;
   }
 
   .r2{
@@ -480,10 +467,6 @@ export default {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-delay: .4s;
-    -webkit-animation-name: socket-pulse;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .4s;
   }
 
   .r3{
@@ -491,10 +474,6 @@ export default {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-delay: .6s;
-    -webkit-animation-name: socket-pulse;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .6s;
   }
 
   .r1 > .hex-brick{
@@ -502,10 +481,6 @@ export default {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-delay: .2s;
-    -webkit-animation-name: socket-fade;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .2s;
   }
 
   .r2 > .hex-brick{
@@ -513,10 +488,6 @@ export default {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-delay: .4s;
-    -webkit-animation-name: socket-fade;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .4s;
   }
 
   .r3 > .hex-brick{
@@ -524,26 +495,19 @@ export default {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-delay: .6s;
-    -webkit-animation-name: socket-fade;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .6s;
   }
 
 
   @keyframes socket-pulse{
     0%{
-      -webkit-transform: scale(1);
       transform: scale(1);
     }
 
     50%{
-      -webkit-transform: scale(0.01);
       transform: scale(0.01);
     }
 
     100%{
-      -webkit-transform: scale(1);
       transform: scale(1);
     }
   }
@@ -559,37 +523,6 @@ export default {
 
     100%{
       background: #41b883;
-    }
-  }
-
-  @-webkit-keyframes socket-pulse{
-    0%{
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-
-    50%{
-      -webkit-transform: scale(0.01);
-      transform: scale(0.01);
-    }
-
-    100%{
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  }
-
-  @-webkit-keyframes socket-fade{
-    0%{
-      background: #ABF8FF;
-    }
-
-    50%{
-      background: #389CA6;
-    }
-
-    100%{
-      background: #ABF8FF;
     }
   }
 </style>

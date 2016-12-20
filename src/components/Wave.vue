@@ -34,7 +34,6 @@ export default {
     background-color: transparent;
     border: 1px solid #41b883;
     border-radius: 100%;
-    -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     position: absolute;
     opacity: 0;
@@ -43,11 +42,9 @@ export default {
     animation: wave-jumper 1s 0s linear infinite;
   }
   .spinner > div:nth-child(2) {
-    -webkit-animation-delay: 0.33333s;
     animation-delay: 0.33333s;
   }
   .spinner > div:nth-child(3) {
-    -webkit-animation-delay: 0.66666s;
     animation-delay: 0.66666s;
   }
 

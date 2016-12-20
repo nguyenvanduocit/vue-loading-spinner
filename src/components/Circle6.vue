@@ -42,12 +42,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  // Animations -----
-  // The animations are made with Bounce.js with manual edits to the output to make it smaller in size.
-  // Some of the initial and ending values of the keyframes are also converted into something other than matrix3d due to Firefox not being able to parse the matrix3d counterparts properly.
-
   /* Generated with Bounce.js. Edit at http://goo.gl/hYAzd9 */
-
   @keyframes circle-6-rotateAll {
     0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
     77.777778% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }

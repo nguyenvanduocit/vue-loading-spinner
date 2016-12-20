@@ -31,16 +31,10 @@ export default {
 </script>
 <style lang="scss" scoped>
   .spinner {
-    display: inline-block;
     box-sizing: border-box;
     border-radius: 100%;
     border: 10px solid rgba(255, 255, 255, 0.2);
-
     animation: circle-2-spin 1s infinite linear;
-    * {
-      line-height: 0;
-      box-sizing: border-box;
-    }
   }
   @keyframes circle-2-spin {
     100% {
