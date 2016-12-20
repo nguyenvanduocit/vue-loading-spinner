@@ -38,7 +38,7 @@ import ThreeDots from './components/ThreeDots.vue'
 import TwoCube from './components/TwoCube.vue'
 import Wave from './components/Wave.vue'
 
-export default {
+export {
   Circle,
   Circle2,
   Circle3,
