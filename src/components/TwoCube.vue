@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:style="styles" class="spinner spinner--cube">
+    <div v-bind:style="styles" class="spinner spinner--two-cube">
       <div v-bind:style='cubeStyles' class="cube1"></div>
       <div v-bind:style='cubeStyles' class="cube2"></div>
     </div>
