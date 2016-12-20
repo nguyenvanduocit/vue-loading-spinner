@@ -72,11 +72,11 @@ var webpackConfig ={
     new webpack.DefinePlugin({
       'process.env': 'production'
     }),
-    /*new webpack.optimize.UglifyJsPlugin({
+    new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
-    }),*/
+    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // extract css into its own file
     new ExtractTextPlugin('[name].css'),
