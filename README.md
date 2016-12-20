@@ -26,14 +26,18 @@ yarn add vue-loading-spinner
   import CubeSpin from 'vue-loading-spinner/components/Cube'
   export default {
     components: {
-      Cube
+      CubeSpin
     }
   }
 </script>
 
 ```
 
-## Build Setup
+## Demo
+
+List of all spinner: [Demo](https://nguyenvanduocit.github.io/vue-loading-spinner/)
+
+## Development Build Setup
 
 ``` bash
 # install dependencies
