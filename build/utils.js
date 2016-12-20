@@ -1,5 +1,4 @@
 var path = require('path')
-var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.cssLoaders = function (options) {
@@ -33,8 +32,6 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(['css']),
     less: generateLoaders(['css', 'less']),
     sass: generateLoaders(['css', 'sass?indentedSyntax']),
-    scss: generateLoaders(['css', 'sass']),
-    stylus: generateLoaders(['css', 'stylus']),
-    styl: generateLoaders(['css', 'stylus'])
+    scss: generateLoaders(['css', 'sass'])
   }
 }

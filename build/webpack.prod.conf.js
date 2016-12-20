@@ -1,18 +1,17 @@
 var path = require('path')
-var config = require('../config')
 var utils = require('./utils')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var env = config.build.env
 var projectRoot = path.resolve(__dirname, '../')
 
 var webpackConfig ={
   entry: {
     'vue-loading-spinner': './src/index.js'
   },
-  devtool: config.build.productionSourceMap ? '#source-map' : false,
+  devtool: "source-map",
   output: {
-    path: config.build.assetsRoot,
+    library: 'VueLoadingSpinner',
+    path: path.resolve(__dirname, '../dist'),
     filename: '[name].js'
   },
   resolve: {
@@ -60,7 +59,7 @@ var webpackConfig ={
   },
   vue: {
     loaders: utils.cssLoaders({
-      sourceMap: config.build.productionSourceMap,
+      sourceMap: true,
       extract: true
     }),
     postcss: [
@@ -71,13 +70,13 @@ var webpackConfig ={
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': 'production'
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    /*new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
-    }),
+    }),*/
     new webpack.optimize.OccurrenceOrderPlugin(),
     // extract css into its own file
     new ExtractTextPlugin('[name].css'),
