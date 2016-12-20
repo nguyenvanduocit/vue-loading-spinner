@@ -1,10 +1,12 @@
 <template>
   <div v-bind:style="styles" class="spinner spinner--circle-8">
     <div v-bind:style="innerStyles" class="spinner-inner">
-      <div class="contener_mixte"><div class="ballcolor ball_1">&nbsp;</div></div>
-      <div class="contener_mixte"><div class="ballcolor ball_2">&nbsp;</div></div>
-      <div class="contener_mixte"><div class="ballcolor ball_3">&nbsp;</div></div>
-      <div class="contener_mixte"><div class="ballcolor ball_4">&nbsp;</div></div>
+      <div class="ball-container">
+        <div class="contener_mixte"><div class="ballcolor ball_1">&nbsp;</div></div>
+        <div class="contener_mixte"><div class="ballcolor ball_2">&nbsp;</div></div>
+        <div class="contener_mixte"><div class="ballcolor ball_3">&nbsp;</div></div>
+        <div class="contener_mixte"><div class="ballcolor ball_4">&nbsp;</div></div>
+      </div>
     </div>
   </div>
 </template>
@@ -19,12 +21,7 @@ export default {
     innerStyles () {
       let size = parseInt(this.size)
       let baseSize = 44
-      let ratio = 1
-      if (size > baseSize) {
-        ratio = baseSize / size
-      } else {
-        ratio = size / baseSize
-      }
+      let ratio = size / baseSize
       return {
         transform: 'scale(' + ratio + ')'
       }
@@ -48,11 +45,13 @@ export default {
       box-sizing: border-box;
     }
   }
-  .spinner-inner
+  .ball-container
   {
     animation:animball_two 1.5s infinite;
     width:44px;
     height:44px;
+    flex-shrink: 0;
+    position: relative;
   }
   .contener_mixte
   {

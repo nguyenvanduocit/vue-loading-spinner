@@ -48,6 +48,10 @@ import PingPong from './components/PingPong'
 import Diamond from './components/Diamond'
 import SpinLine from './components/SpinLine'
 import Plane from './components/Plane'
+import Mikepad from './components/Mikepad'
+import Jumper from './components/Jumper'
+import Wave from './components/Wave'
+import Texture from './components/Texture'
 export default {
   name: 'app',
   components: {
@@ -85,7 +89,11 @@ export default {
     PingPong,
     Diamond,
     SpinLine,
-    Plane
+    Plane,
+    Mikepad,
+    Jumper,
+    Wave,
+    Texture
   },
   data () {
     return {
@@ -96,36 +104,40 @@ export default {
         'RotateSquare3',
         'RotateSquare4',
         'RotateSquare5',
-        'DoubleBounce',
-        'Stretch',
         'Cube',
         'CubeGrid',
         'CubeShadow',
-        'ScaleOut',
-        'CircleSpin',
+        'Stretch',
         'CircleSpin2',
-        'CircleSpin3',
         'CircleSpin4',
-        'CircleSpin5',
-        'CircleSpin6',
-        'CircleSpin7',
-        'CircleSpin8',
+        'CircleSpin',
         'CircleSpin9',
         'CircleSpin10',
-        'ThreeDots',
+        'DoubleBounce',
+        'ScaleOut',
+        'Jumper',
+        'Wave',
+        'CircleSpin3',
+        'CircleSpin5',
+        'CircleSpin6',
         'GoogleSpin',
+        'CircleSpin7',
+        'Jawn',
+        'ThreeDots',
+        'CircleSpin8',
         'Gauge',
         'Origami',
         'Hexagon',
         'Socket',
         'HourGlass',
         'Pencil',
-        'Jawn',
         'LetterCube',
         'PingPong',
         'Diamond',
         'SpinLine',
-        'Plane'
+        'Plane',
+        'Mikepad',
+        'Texture'
       ]
     }
   }
