@@ -74,7 +74,7 @@ export default {
     width:15px;
     height:15px;
     border-radius:50%;
-    background:#41b883;
+    background:#f7484e;
     position:absolute;
     animation: pingpong-bounce 2s linear infinite;
   }

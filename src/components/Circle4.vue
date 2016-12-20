@@ -23,7 +23,7 @@ export default {
     box-sizing: border-box;
     position: relative;
     border: 3px solid transparent;
-    border-top-color: #A04668;
+    border-top-color: #f7484e;
     border-radius: 50%;
     animation: circle-4-spin 2s linear infinite;
     &:before, &:after{
@@ -35,7 +35,7 @@ export default {
     }
 
     &:before{
-      border-top-color: #254E70;
+      border-top-color: #f8b334;
       top: 0;
       left: 0;
       right: 0;

@@ -52,7 +52,6 @@ export default {
     height: 80px;
     line-height: 80px;
     text-align: center;
-    font-size: 50px;
     transform-style: preserve-3d;
     transition: transform 0.5s 0.1s;
     perspective: 9999px;
@@ -65,6 +64,8 @@ export default {
       animation: letter-cube-panel 2.2s infinite forwards;
 
       .cube-face {
+        font-family: "Open Sans",sans-serif;
+        font-size: 50px;
         color: #41b883;
         box-shadow: inset 0 0 0 1px #41b883, 0 0 1px 1px #41b883;
       }

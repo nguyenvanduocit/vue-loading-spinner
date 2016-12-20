@@ -65,6 +65,7 @@ export default {
     width: 75px;
     top: 10px;
     left: 10px;
+    border-top: 3px solid #f7484e;
     animation-duration: 10s;
   }
 
@@ -73,6 +74,7 @@ export default {
     width: 50px;
     top: 22px;
     left: 22px;
+    border-top: 3px solid #f8b334;
     animation-duration: 4s;
   }
 

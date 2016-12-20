@@ -68,7 +68,7 @@ export default {
   }
   .ball_1
   {
-    background-color:#cb2025;
+    background-color:#f7484e;
     top:0; left:0;
   }
   .ball_2
@@ -78,12 +78,12 @@ export default {
   }
   .ball_3
   {
-    background-color:#00a096;
+    background-color:#41b883;
     top:24px; left:0;
   }
   .ball_4
   {
-    background-color:#97bf0d;
+    background-color:#34495e;
     top:24px; left:24px;
   }
 

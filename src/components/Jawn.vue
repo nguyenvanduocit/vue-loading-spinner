@@ -34,7 +34,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $blue: #41b883;
   .spinner-inner{
     width: 70px;
     height: 70px;
@@ -48,7 +47,7 @@ export default {
   }
   .jawn {
     position: relative;
-    background-color: #F8E71C;
+    background-color: #41b883;
     width: 15px;
     height: 15px;
     margin: 0 auto;
@@ -72,7 +71,7 @@ export default {
     &:before {
       left: -25px;
       top: -15px;
-      background-color: $blue;
+      background-color: #34495e;
       transform-origin: 30px 20px;
       animation: jawn-axis 2s linear infinite;
     }

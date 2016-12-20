@@ -79,14 +79,14 @@ export default {
   }
 
   .spin-1{
-    border: 5px solid #c00353 ;
+    border: 5px solid #f7484e ;
     border-top: 5px solid transparent;
     border-left: 5px solid transparent;
     width: 120px;
     height: 120px;
   }
   .spin-2{
-    border: 5px solid #05bbc3 ;
+    border: 5px solid #41b883 ;
     border-top: 5px solid transparent;
     border-left: 5px solid transparent;
     width: 100px;
@@ -110,7 +110,7 @@ export default {
     animation-delay: 1s;
   }
   .spin-5{
-    border: 5px solid #f34d51 ;
+    border: 5px solid #34495e ;
     border-top: 5px solid transparent;
     border-left: 5px solid transparent;
     width: 40px;
