@@ -1,5 +1,20 @@
 <template>
   <div id="app">
+    <cube-spin></cube-spin>
+  </div>
+</template>
+
+<script>
+  import CubeSpin from '/Cube'
+  export default {
+    components: {
+      Cube
+    }
+  }
+</script>
+
+<template>
+  <div id="app">
     <div class="header">
       <h1 class="header--title">vue-loading-spinner v1.0</h1>
     </div>

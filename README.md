@@ -1,6 +1,37 @@
 # vue-loading-spinner
 
-> Loading spinner collection for Vuejs
+> The collection of spinner for Vuejs
+
+## Installation
+
+``` bash
+npm install --save vue-loading-spinner
+```
+or
+
+``` bash
+yarn add vue-loading-spinner
+```
+
+## Usage
+
+``` vue
+<template>
+  <div id="app">
+    <cube-spin></cube-spin>
+  </div>
+</template>
+
+<script>
+  import CubeSpin from 'vue-loading-spinner/components/Cube'
+  export default {
+    components: {
+      Cube
+    }
+  }
+</script>
+
+```
 
 ## Build Setup
 
