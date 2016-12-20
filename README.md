@@ -1,6 +1,6 @@
 # vue-loading-spinner
 
-> The collection of spinner for Vuejs
+> Just another collection of loading spinners with Vue.js
 
 ## Installation
 
@@ -37,7 +37,7 @@ yarn add vue-loading-spinner
 
 List of all spinner: [Demo](https://nguyenvanduocit.github.io/vue-loading-spinner/)
 
-## Development Build Setup
+## Development Setup
 
 ``` bash
 # install dependencies
