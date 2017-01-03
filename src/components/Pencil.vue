@@ -22,8 +22,8 @@ export default {
   computed: {
     styles () {
       return {
-        maxWidth: this.size,
-        maxHeight: this.size,
+        width: this.size,
+        height: 'auto',
         fill: this.color
       }
     }
