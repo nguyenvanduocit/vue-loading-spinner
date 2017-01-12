@@ -38,6 +38,7 @@ import CircleSpin7 from './components/Circle7'
 import CircleSpin8 from './components/Circle8'
 import CircleSpin9 from './components/Circle9'
 import CircleSpin10 from './components/Circle10'
+import CircleSpin11 from './components/Circle11'
 import ThreeDots from './components/ThreeDots'
 import GoogleSpin from './components/Google'
 import Gauge from './components/Gauge'
@@ -80,6 +81,7 @@ export default {
     CircleSpin8,
     CircleSpin9,
     CircleSpin10,
+    CircleSpin11,
     ThreeDots,
     GoogleSpin,
     Gauge,
@@ -101,7 +103,7 @@ export default {
   },
   data () {
     return {
-      size: '60px',
+      size: '90px',
       spinners: [
         {
           'component': 'RotateSquare',
@@ -194,6 +196,10 @@ export default {
         {
           'component': 'CircleSpin10',
           'path': 'Circle10'
+        },
+        {
+          'component': 'CircleSpin11',
+          'path': 'Circle11'
         },
         {
           'component': 'GoogleSpin',
