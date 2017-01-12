@@ -103,7 +103,7 @@ export default {
   },
   data () {
     return {
-      size: '90px',
+      size: '60px',
       spinners: [
         {
           'component': 'RotateSquare',
