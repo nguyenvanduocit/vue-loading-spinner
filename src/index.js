@@ -8,6 +8,7 @@ import Circle7 from './components/Circle7.vue'
 import Circle8 from './components/Circle8.vue'
 import Circle9 from './components/Circle9.vue'
 import Circle10 from './components/Circle10.vue'
+import Circle11 from './components/Circle11.vue'
 import CubeShadow from './components/CubeShadow.vue'
 import Diamond from './components/Diamond.vue'
 import DoubleBounce from './components/DoubleBounce.vue'
@@ -49,6 +50,7 @@ export {
   Circle8,
   Circle9,
   Circle10,
+  Circle11,
   CubeShadow,
   Diamond,
   DoubleBounce,
