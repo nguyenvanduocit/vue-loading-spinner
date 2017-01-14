@@ -22,6 +22,7 @@ import RotateSquare2 from './components/RotateSquare2'
 import RotateSquare3 from './components/RotateSquare3'
 import RotateSquare4 from './components/RotateSquare4'
 import RotateSquare5 from './components/RotateSquare5'
+import RotateSquare6 from './components/RotateSquare6'
 import DoubleBounce from './components/DoubleBounce'
 import Stretch from './components/Stretch'
 import Cube from './components/Cube'
@@ -65,6 +66,7 @@ export default {
     RotateSquare3,
     RotateSquare4,
     RotateSquare5,
+    RotateSquare6,
     DoubleBounce,
     Stretch,
     Cube,
@@ -124,6 +126,10 @@ export default {
         {
           'component': 'RotateSquare5',
           'path': 'RotateSquare5'
+        },
+        {
+          'component': 'RotateSquare6',
+          'path': 'RotateSquare6'
         },
         {
           'component': 'CubeShadow',
