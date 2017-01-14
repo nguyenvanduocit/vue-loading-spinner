@@ -3,4 +3,7 @@ node_modules/
 npm-debug.log
 /yarn.lock
 /src/App.vue
+/src/main.js
+/dist/static
+/dist/index.html
 /config
