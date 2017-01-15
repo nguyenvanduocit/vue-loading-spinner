@@ -6,7 +6,7 @@ var projectRoot = path.resolve(__dirname, '../')
 
 var webpackConfig ={
   entry: {
-    'vue-loading-spinner': './src/index.js'
+    'vue-loading-spinner': './index.js'
   },
   devtool: "source-map",
   output: {
