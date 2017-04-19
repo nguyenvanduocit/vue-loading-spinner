@@ -38,8 +38,7 @@ import Texture from './components/Texture.vue'
 import ThreeDots from './components/ThreeDots.vue'
 import TwoCube from './components/TwoCube.vue'
 import Wave from './components/Wave.vue'
-
-export {
+const VueLoadingSpinner = {
   Circle,
   Circle2,
   Circle3,
@@ -81,3 +80,5 @@ export {
   TwoCube,
   Wave
 }
+
+module.exports = VueLoadingSpinner
