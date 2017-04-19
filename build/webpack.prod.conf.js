@@ -3,69 +3,46 @@ var utils = require('./utils')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var projectRoot = path.resolve(__dirname, '../')
+var vueLoaderConfig = require('./vue-loader.conf')
 
 var webpackConfig ={
   entry: {
     'vue-loading-spinner': './src/index.js'
   },
-  devtool: "source-map",
+  devtool: '#source-map',
   output: {
     library: 'VueLoadingSpinner',
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
-    fallback: [path.join(__dirname, '../node_modules')],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.common.js',
-      'src': path.resolve(__dirname, '../src'),
-      'components': path.resolve(__dirname, '../src/components')
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, '../src')
     }
   },
-  resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
-  },
   module: {
-    preLoaders: [
+    rules: [
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: path.resolve(__dirname, '../src'),
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      },
       {
         test: /\.vue$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
+        loader: 'vue-loader',
+        options: vueLoaderConfig
       },
       {
         test: /\.js$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
+        loader: 'babel-loader',
+        include: path.resolve(__dirname, '../src')
       }
-    ],
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        include: projectRoot,
-        exclude: /node_modules/
-      }
-    ]
-  },
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
-  },
-  vue: {
-    loaders: utils.cssLoaders({
-      sourceMap: true,
-      extract: true
-    }),
-    postcss: [
-      require('autoprefixer')({
-        browsers: ['last 2 versions']
-      })
     ]
   },
   plugins: [
