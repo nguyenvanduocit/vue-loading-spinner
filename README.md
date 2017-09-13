@@ -23,7 +23,7 @@ yarn add vue-loading-spinner
 </template>
 
 <script>
-  import CubeSpin from 'vue-loading-spinner/components/Cube'
+  import {CubeSpin} from 'vue-loading-spinner'
   export default {
     components: {
       CubeSpin
