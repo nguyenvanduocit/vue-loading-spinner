@@ -3,6 +3,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.cssLoaders = function (options) {
   options = options || {}
+
   var cssLoader = {
     loader: 'css-loader',
     options: {
@@ -10,6 +11,7 @@ exports.cssLoaders = function (options) {
       sourceMap: options.sourceMap
     }
   }
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     var loaders = [cssLoader]

@@ -1,8 +1,6 @@
 var path = require('path')
-var utils = require('./utils')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var projectRoot = path.resolve(__dirname, '../')
 var vueLoaderConfig = require('./vue-loader.conf')
 
 var webpackConfig ={
@@ -52,7 +50,8 @@ var webpackConfig ={
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
-      }
+      },
+      sourceMap: true
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // extract css into its own file

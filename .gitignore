@@ -7,3 +7,5 @@ npm-debug.log
 /dist/static
 /dist/index.html
 /config
+
+\.idea/
