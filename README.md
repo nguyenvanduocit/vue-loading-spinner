@@ -18,15 +18,15 @@ yarn add vue-loading-spinner
 ``` vue
 <template>
   <div id="app">
-    <cube-spin></cube-spin>
+    <rotate-square2></rotate-square2>
   </div>
 </template>
 
 <script>
-  import {CubeSpin} from 'vue-loading-spinner'
+  import {RotateSquare2} from 'vue-loading-spinner'
   export default {
     components: {
-      CubeSpin
+      RotateSquare2
     }
   }
 </script>
