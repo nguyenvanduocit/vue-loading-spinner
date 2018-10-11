@@ -65,10 +65,6 @@ export default {
     animation:hourglass 1s linear infinite;
   }
 
-  .outer{
-    fill:$fill;
-  }
-
   .middle{
     fill:$bg;
   }
