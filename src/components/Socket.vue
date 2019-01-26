@@ -194,9 +194,25 @@
 
 <script>
 export default {
+  name: 'Socket',
   props: {
     size: {
-      default: '40px'
+      type: String,
+      required: false,
+      default: '40px',
+      validator: function (val) {
+        const cssUnits = ['px', 'cm', 'mm', 'in', 'pt', 'pc', 'em', 'ex', 'ch', 'rem', 'vw', 'vh', 'vmin', 'vmax', '%'];
+        let hasValidUnit = false;
+        cssUnits.forEach(function (unit) {
+          // IE11 does not support String.prototype.endsWith
+          let endsWithUnit = val.substring(val.length - unit.length, val.length) === unit;
+          if (endsWithUnit) {
+            hasValidUnit = true;
+          }
+        });
+        const isValidNumber = typeof(parseInt(val)) === 'number' && !isNaN(parseInt(val));
+        return hasValidUnit && isValidNumber;
+      }
     }
   },
   computed: {
