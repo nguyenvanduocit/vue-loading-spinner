@@ -17,7 +17,7 @@ export default {
       return {
         width: this.size,
         height: this.size,
-        background-color: this.background
+        backgroundColor: this.background
       }
     }
   }
