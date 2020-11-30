@@ -2,12 +2,7 @@
   <div v-bind:style="styles" class="spinner spinner--socker">
     <div v-bind:style="innerStyles" class="spinner-inner">
       <div class="cube panelLoad">
-        <div class='cube-face cube-face-front'>L</div>
-        <div class='cube-face cube-face-back'>O</div>
-        <div class='cube-face cube-face-left'>A</div>
-        <div class='cube-face cube-face-right'>D</div>
-        <div class='cube-face cube-face-bottom'>I</div>
-        <div class='cube-face cube-face-top'>N'</div>
+        <div v-for="{side, letter} of faces" :key="side" :class="`cube-face cube-face-${side}`">{{ letter }}</div>
       </div>
     </div>
   </div>
@@ -18,6 +13,11 @@ export default {
   props: {
     size: {
       default: '40px'
+    },
+    letters: {
+      type: Array,
+      default: () => ['A', 'E', 'G', 'O', 'N', 'P'],
+      validator: letters => letters.length === 6
     }
   },
   computed: {
@@ -32,6 +32,14 @@ export default {
         width: this.size,
         height: this.size
       }
+    },
+    faces () {
+      const faces = ['front', 'back', 'left', 'right', 'bottom', 'top']
+
+      return faces.map((face, index) => ({
+        side: face,
+        letter: this.letters[index]
+      }))
     }
   }
 }
@@ -62,7 +70,6 @@ export default {
       z-index: 11;
       top: 50%;
       animation: letter-cube-panel 2.2s infinite forwards;
-
       .cube-face {
         font-family: "Open Sans",sans-serif;
         font-size: 50px;
@@ -70,7 +77,6 @@ export default {
         box-shadow: inset 0 0 0 1px #41b883, 0 0 1px 1px #41b883;
       }
     }
-
     .cube-face {
       width: inherit;
       height: inherit;
@@ -79,33 +85,26 @@ export default {
       box-shadow: inset 0 0 0 1px #333, 0 0 1px 1px #333;
       opacity: 1;
     }
-
     .cube-face-front {
       transform: translate3d(0, 0, 40px);
       font-size: 57px;
     }
-
     .cube-face-back {
       transform: rotateY(180deg) translate3d(0, 0, 40px);
     }
-
     .cube-face-left {
       transform: rotateY(-90deg) translate3d(0, 0, 40px);
     }
-
     .cube-face-right {
       transform: rotateY(90deg) translate3d(0, 0, 40px);
     }
-
     .cube-face-top {
       transform: rotateX(90deg) translate3d(0, 0, 40px);
     }
-
     .cube-face-bottom {
       transform: rotateX(-90deg) translate3d(0, 0, 40px);
     }
   }
-
   @keyframes letter-cube-panel {
     0% {
       transform: rotateY(0deg) rotateZ(0deg);
