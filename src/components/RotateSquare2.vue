@@ -17,7 +17,7 @@ export default {
       return {
         width: this.size,
         height: this.size,
-        backgroundColor: this.background
+        "--bg-color": this.background
       }
     }
   }
@@ -48,7 +48,7 @@ export default {
       content: '';
       width: 100%;
       height: 100%;
-      background: #41b883;
+      background: var(--bg-color);
       animation: rotate-square-2-animate .5s linear infinite;
       position: absolute;
       bottom:40%;
