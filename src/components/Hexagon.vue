@@ -19,13 +19,21 @@ export default {
   props: {
     size: {
       default: '40px'
+    },
+    color: {
+      default: '#41b883'
+    },
+    spinnerColor: {
+      default: '#41b883'
     }
   },
   computed: {
     innerStyles () {
       let size = parseInt(this.size)
       return {
-        transform: 'scale(' + (size / 164) + ')'
+        transform: 'scale(' + (size / 164) + ')',
+        '--bg-color': this.color,
+        '--spinner-color': this.spinnerColor
       }
     },
     styles () {
@@ -57,7 +65,7 @@ export default {
       height: 164px;
       display: block;
       position: absolute;
-      border: 7px solid #41b883;
+      border: 7px solid var(--spinner-color);
       border-radius: 50%;
       top: -2px;
       left: -2px;
@@ -109,7 +117,7 @@ export default {
     position: absolute;
     width: 40px;
     height: 23px;
-    background-color: #41b883;
+    background-color: var(--bg-color);
     &:before {
       content: "";
       position: absolute;
@@ -119,7 +127,7 @@ export default {
       height: 0;
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
-      border-bottom: 11.5px solid #41b883;
+      border-bottom: 11.5px solid var(--bg-color);
     }
     &:after {
       content: "";
@@ -130,7 +138,7 @@ export default {
       height: 0;
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
-      border-top: 11.5px solid #41b883;
+      border-top: 11.5px solid var(--bg-color);
     }
   }
 

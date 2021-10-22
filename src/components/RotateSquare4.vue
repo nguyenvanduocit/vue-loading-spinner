@@ -18,7 +18,8 @@ export default {
     styles () {
       return {
         width: this.size,
-        height: this.size
+        height: this.size,
+        '--bg-color': this.color
       }
     }
   }
@@ -28,7 +29,7 @@ export default {
 <style lang="scss" scoped>
   .spinner {
     position: relative;
-    border: 4px solid #41b883;
+    border: 4px solid var(--bg-color);
     animation: loader 2s infinite ease;
     * {
       line-height: 0;
@@ -40,7 +41,7 @@ export default {
     vertical-align: top;
     display: inline-block;
     width: 100%;
-    background-color: #41b883;
+    background-color: var(--bg-color);
     animation: loader-inner 2s infinite ease-in;
   }
 

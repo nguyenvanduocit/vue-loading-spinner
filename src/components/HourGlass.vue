@@ -14,13 +14,17 @@ export default {
   props: {
     size: {
       default: '40px'
+    },
+    color: {
+      default: '#41b883'
     }
   },
   computed: {
     innerStyles () {
       let size = parseInt(this.size)
       return {
-        transform: 'scale(' + (size / 64) + ')'
+        transform: 'scale(' + (size / 64) + ')',
+        '--bg-color': this.color
       }
     },
     styles () {
@@ -35,7 +39,6 @@ export default {
 
 <style lang="scss" scoped>
   $bg: #fff;
-  $fill:#41b883;
   .spinner{
     display: flex;
     justify-content: center;
@@ -52,13 +55,13 @@ export default {
     height:64px;
     box-shadow:
             inset $bg 0 0 0 0,
-            inset $fill 0 32px 0 0,
+            inset var(--bg-color) 0 32px 0 0,
             inset $bg 0 0 64px 0;
     animation:hourglass 1s linear infinite;
   }
 
   .outer{
-    fill:$fill;
+    fill:var(--bg-color);
   }
 
   .middle{
@@ -70,25 +73,25 @@ export default {
       transform:rotate(0deg);
       box-shadow:
               inset $bg 0 0 0 0,
-              inset $fill 0 32px 0 0,
+              inset var(--bg-color) 0 32px 0 0,
               inset $bg 0 64px 0 0,
-              inset $fill 0 64px 0 0;
+              inset var(--bg-color) 0 64px 0 0;
     }
     80%{
       transform:rotate(0deg);
       box-shadow:
               inset $bg 0 32px 0 0,
-              inset $fill 0 32px 0 0,
+              inset var(--bg-color) 0 32px 0 0,
               inset $bg 0 32px 0 0,
-              inset $fill 0 64px 0 0;
+              inset var(--bg-color) 0 64px 0 0;
     }
     100%{
       transform:rotate(180deg);
       box-shadow:
               inset $bg 0 32px 0 0,
-              inset $fill 0 32px 0 0,
+              inset var(--bg-color) 0 32px 0 0,
               inset $bg 0 32px 0 0,
-              inset $fill 0 64px 0 0;
+              inset var(--bg-color) 0 64px 0 0;
     }
   }
 </style>

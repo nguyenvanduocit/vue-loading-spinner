@@ -18,13 +18,17 @@ export default {
       type: Array,
       default: () => ['A', 'E', 'G', 'O', 'N', 'P'],
       validator: letters => letters.length === 6
+    },
+    color: {
+      default: '#41b883'
     }
   },
   computed: {
     innerStyles () {
       let size = parseInt(this.size) / 2
       return {
-        transform: 'scale(' + (size / 75) + ')'
+        transform: 'scale(' + (size / 75) + ')',
+        '--bg-color': this.color
       }
     },
     styles () {
@@ -73,8 +77,8 @@ export default {
       .cube-face {
         font-family: "Open Sans",sans-serif;
         font-size: 50px;
-        color: #41b883;
-        box-shadow: inset 0 0 0 1px #41b883, 0 0 1px 1px #41b883;
+        color: var(--bg-color);
+        box-shadow: inset 0 0 0 1px var(--bg-color), 0 0 1px 1px var(--bg-color);
       }
     }
     .cube-face {
