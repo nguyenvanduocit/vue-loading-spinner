@@ -25,7 +25,7 @@ export default {
     innerStyles() {
       return {
         ...this.styles,
-        backgroundColor: this.color
+        '--bg-color': this.color
       }
     }
   }
@@ -39,6 +39,7 @@ export default {
     }
   }
   .spinner > div {
+    background-color: var(--bg-color);
     border-radius: 100%;
     animation-fill-mode: both;
     position: absolute;

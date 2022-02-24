@@ -21,7 +21,8 @@ export default {
     innerStyles () {
       let size = parseInt(this.size)
       return {
-        transform: 'scale(' + (size / 80) + ')'
+        transform: 'scale(' + (size / 80) + ')',
+        '--bg-color': this.color
       }
     },
     styles () {
@@ -34,7 +35,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  $loader-color: #41b883;
   .spinner{
     display: flex;
     justify-content: center;
@@ -53,7 +53,7 @@ export default {
   .load3-center {
     display: inline-block;
     position: absolute;
-    background: $loader-color;
+    background: var(--bg-color);
     transform: rotate(45deg);
     height: 30px;
     width: 30px;
@@ -77,7 +77,7 @@ export default {
       display: block;
       top: 0;
       border-radius: 3px;
-      background: $loader-color;
+      background: var(--bg-color);
       animation-delay: -.5s;
     }
 

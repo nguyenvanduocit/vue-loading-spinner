@@ -15,13 +15,21 @@ export default {
   props: {
     size: {
       default: '40px'
+    },
+    color: {
+      default: '#41b883'
+    },
+    secondaryColor: {
+      default: '#31855e'
     }
   },
   computed: {
     innerStyles () {
       let size = parseInt(this.size)
       return {
-        transform: 'scale(' + (size / 60) + ')'
+        transform: 'scale(' + (size / 60) + ')',
+        '--bg-color': this.color,
+        '--secondary-color': this.secondaryColor
       }
     },
     styles () {
@@ -38,13 +46,13 @@ export default {
     @keyframes origami-show-#{$i}{
       from{
         transform: rotateZ(60* $i + deg) rotateY(-90deg) rotateX(0deg);
-        border-left-color: #31855e;
+        border-left-color: var(--secondary-color);
       }
     }
     @keyframes origami-hide-#{$i}{
       to{
         transform: rotateZ(60* $i + deg) rotateY(-90deg) rotateX(0deg);
-        border-left-color: #31855e;
+        border-left-color: var(--secondary-color);
       }
     }
 
@@ -55,18 +63,18 @@ export default {
 
       #{$startIndex * 1%}{
         transform: rotateZ(60* $i + deg) rotateY(90deg) rotateX(0deg);
-        border-left-color: #31855e;
+        border-left-color: var(--secondary-color);
       }
       #{$startIndex + 5%},
       #{$reverseIndex * 1%}{
         transform: rotateZ(60* $i + deg) rotateY(0) rotateX(0deg);
-        border-left-color: #41b883;
+        border-left-color: var(--bg-color);
       }
 
       #{$reverseIndex + 5%},
       100%{
         transform: rotateZ(60* $i + deg) rotateY(90deg) rotateX(0deg);
-        border-left-color: #31855e;
+        border-left-color: var(--secondary-color);
       }
     }
   }

@@ -197,13 +197,21 @@ export default {
   props: {
     size: {
       default: '40px'
+    },
+    color: {
+      default: '#41b883'
+    },
+    secondaryColor: {
+      default: '#286b4b'
     }
   },
   computed: {
     innerStyles () {
       let size = parseInt(this.size)
       return {
-        transform: 'scale(' + (size / 220) + ')'
+        transform: 'scale(' + (size / 220) + ')',
+        '--bg-color': this.color,
+        '--secondary-color': this.secondaryColor
       }
     },
     styles () {
@@ -235,7 +243,7 @@ export default {
   }
 
   .hex-brick{
-    background: #41b883;
+    background: var(--bg-color);
     width: 30px;
     height: 17px;
     position: absolute;
@@ -514,15 +522,15 @@ export default {
 
   @keyframes socket-fade{
     0%{
-      background: #41b883;
+      background: var(--bg-color);
     }
 
     50%{
-      background: #286b4b;
+      background: var(--secondary-color);
     }
 
     100%{
-      background: #41b883;
+      background: var(--bg-color);
     }
   }
 </style>
