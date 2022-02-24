@@ -7,6 +7,10 @@
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nguyenvanduocit/vue-loading-spinner.git"
+  },
   "main": "src/index.js",
   "dependencies": {
     "node-sass": "^4.5.3",
