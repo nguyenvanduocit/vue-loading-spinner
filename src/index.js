@@ -29,6 +29,7 @@ import RotateSquare2 from './components/RotateSquare2.vue'
 import RotateSquare3 from './components/RotateSquare3.vue'
 import RotateSquare4 from './components/RotateSquare4.vue'
 import RotateSquare5 from './components/RotateSquare5.vue'
+import RotateSquare6 from './components/RotateSquare6.vue'
 import ScaleOut from './components/ScaleOut.vue'
 import Socket from './components/Socket.vue'
 import SpinLine from './components/SpinLine.vue'
@@ -71,6 +72,7 @@ export {
   RotateSquare3,
   RotateSquare4,
   RotateSquare5,
+  RotateSquare6,
   ScaleOut,
   Socket,
   SpinLine,

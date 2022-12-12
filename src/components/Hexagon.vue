@@ -152,7 +152,7 @@ export default {
           (6, 36px, -21px),
           (7, 36px, 21px) {
     $time: 3s; // thx to @zeakd for this formula
-    $delay: $time / 14;
+    $delay: calc($time / 14);
     .hexagon.hex_#{$index} {
       top: $top;
       left: $left;
