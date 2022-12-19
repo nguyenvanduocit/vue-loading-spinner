@@ -18,13 +18,21 @@ export default {
   props: {
     size: {
       default: '40px'
+    },
+    color: {
+      default: '#41b883'
+    },
+    ballColor: {
+      default: '#f7484e'
     }
   },
   computed: {
     innerStyles () {
       let size = parseInt(this.size)
       return {
-        transform: 'scale(' + (size / 250) + ')'
+        transform: 'scale(' + (size / 250) + ')',
+        '--bg-color': this.color,
+        '--ball-color': this.ballColor
       }
     },
     styles () {
@@ -57,7 +65,7 @@ export default {
   .right {
     height:50px;
     width:15px;
-    background:#41b883;
+    background:var(--bg-color);
     display: inline-block;
     position:absolute;
   }
@@ -74,7 +82,7 @@ export default {
     width:15px;
     height:15px;
     border-radius:50%;
-    background:#f7484e;
+    background:var(--ball-color);
     position:absolute;
     animation: pingpong-bounce 2s linear infinite;
   }

@@ -22,6 +22,9 @@ export default {
     },
     color: {
       default: '#41b883'
+    },
+    secondaryColor: {
+      default: '#32855f'
     }
   },
   computed: {
@@ -30,7 +33,9 @@ export default {
       return {
         width: size + 'px',
         height: this.size,
-        transform: 'scale(' + (size / 70) + ')'
+        transform: 'scale(' + (size / 70) + ')',
+        '--bg-color': this.color,
+        '--secondary-color': this.secondaryColor
       }
     },
     styles () {
@@ -64,7 +69,7 @@ export default {
   }
 
   .plane{
-    background:#41b883;
+    background:var(--bg-color);
     width:400%;
     height:100%;
     position:absolute;
@@ -87,7 +92,7 @@ export default {
   }
   #middle .plane{
     transform : translate3d(0px,0,0);
-    background : #32855f;
+    background : var(--secondary-color);
     animation : trans2 1.3s linear infinite  0.3s  backwards;
 
   }

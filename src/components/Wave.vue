@@ -10,11 +10,15 @@ export default {
   props: {
     size: {
       default: '40px'
-    }
+    },
+    background: {
+      default: '#41b883'
+    },
   },
   computed: {
     styles () {
       return {
+        border: '1px solid ' + this.background,
         width: this.size,
         height: this.size
       }
@@ -32,7 +36,6 @@ export default {
   }
   .spinner > div {
     background-color: transparent;
-    border: 1px solid #41b883;
     border-radius: 100%;
     animation-fill-mode: both;
     position: absolute;

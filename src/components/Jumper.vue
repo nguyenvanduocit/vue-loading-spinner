@@ -1,22 +1,31 @@
 <template>
   <div v-bind:style="styles" class="spinner spinner--jumper">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div v-bind:style="innerStyles" ></div>
+    <div v-bind:style="innerStyles" ></div>
+    <div v-bind:style="innerStyles" ></div>
   </div>
 </template>
 <script>
 export default {
   props: {
     size: {
-      default: '40px'
+      default: '50px'
+    },
+    color: {
+      default: '#41b883'
     }
   },
   computed: {
     styles () {
       return {
         width: this.size,
-        height: this.size
+        height: this.size,
+      }
+    },
+    innerStyles() {
+      return {
+        ...this.styles,
+        '--bg-color': this.color
       }
     }
   }
@@ -30,13 +39,11 @@ export default {
     }
   }
   .spinner > div {
-    background-color: #41b883;
+    background-color: var(--bg-color);
     border-radius: 100%;
     animation-fill-mode: both;
     position: absolute;
     opacity: 0;
-    width: 50px;
-    height: 50px;
     animation: jumper 1s 0s linear infinite;
   }
   .spinner > div:nth-child(2) {

@@ -21,7 +21,8 @@ export default {
       let size = parseInt(this.size)
       return {
         width: size / 4 + 'px',
-        height: size / 4 + 'px'
+        height: size / 4 + 'px',
+        '--bg-color': this.color
       }
     },
     styles () {
@@ -51,7 +52,7 @@ export default {
       left: 0;
       top: 0;
       border-radius: 2px;
-      background: $accent;
+      background: var(--bg-color);
       transform: translateX(-50%) rotate(45deg) scale(0);
       animation: diamonds $duration $timing infinite;
       @for $i from 1 through 4 {

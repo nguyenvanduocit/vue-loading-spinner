@@ -1,5 +1,11 @@
 .DS_Store
 node_modules/
-dist/
 npm-debug.log
 /yarn.lock
+/src/App.vue
+/src/main.js
+/dist/static
+/dist/index.html
+/config
+
+\.idea/

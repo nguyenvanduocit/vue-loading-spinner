@@ -18,19 +18,18 @@ yarn add vue-loading-spinner
 ``` vue
 <template>
   <div id="app">
-    <cube-spin></cube-spin>
+    <rotate-square2></rotate-square2>
   </div>
 </template>
 
 <script>
-  import CubeSpin from 'vue-loading-spinner/components/Cube'
+  import {RotateSquare2} from 'vue-loading-spinner'
   export default {
     components: {
-      CubeSpin
+      RotateSquare2
     }
   }
 </script>
-
 ```
 
 ## Demo
@@ -39,15 +38,4 @@ List of all spinner: [Demo](https://nguyenvanduocit.github.io/vue-loading-spinne
 
 ## Development Setup
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Checkout branch `develop`

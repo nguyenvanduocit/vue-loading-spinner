@@ -15,13 +15,17 @@ export default {
   props: {
     size: {
       default: '40px'
+    },
+    color: {
+      default: '#41b883'
     }
   },
   computed: {
     innerStyles () {
       let size = parseInt(this.size)
       return {
-        transform: 'scale(' + (size / 31) + ')'
+        transform: 'scale(' + (size / 31) + ')',
+        '--bg-color': this.color
       }
     },
     styles () {
@@ -53,14 +57,14 @@ export default {
     content : '';
     width : 27px;
     height : 4px;
-    border : 2px solid #41b883;
+    border : 2px solid var(--bg-color);
     margin : 0 auto;
   }
 
   .spinner-inner .pad {
     width : 27px;
     height : 27px;
-    border : 2px solid #41b883;
+    border : 2px solid var(--bg-color);
     border-top : 0;
     padding : 4px;
     margin : 0 auto;
@@ -69,7 +73,7 @@ export default {
   .spinner-inner .line {
     width : 15px;
     margin-top : 4px;
-    border-top : 2px solid #41b883;
+    border-top : 2px solid var(--bg-color);
     opacity : 0;
     animation : mikepad-writeline 3s infinite ease-in;
   }
@@ -94,7 +98,7 @@ export default {
     text-align : center;
     margin-top : 10px;
     font-size : 14px;
-    color : #41b883;
+    color : var(--bg-color);
   }
   @keyframes mikepad-writeline {
     0% { width : 0px; opacity: 0; }
