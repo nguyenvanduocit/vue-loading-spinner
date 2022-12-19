@@ -22,7 +22,6 @@ export default {
     cubeStyles () {
       return {
         backgroundColor: this.background,
-        animationName: 'sk-cubemove',
         animationDuration: this.duration
       }
     },
