@@ -1,6 +1,6 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--hexagon">
-    <div v-bind:style="innerStyles" class="spinner-inner">
+  <div :style="styles" class="spinner spinner--hexagon">
+    <div :style="innerStyles" class="spinner-inner">
       <ul class="hexagon-container">
         <li class="hexagon hex_1"></li>
         <li class="hexagon hex_2"></li>
@@ -14,36 +14,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    },
-    spinnerColor: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    innerStyles () {
-      let size = parseInt(this.size)
-      return {
-        transform: 'scale(' + (size / 164) + ')',
-        '--bg-color': this.color,
-        '--spinner-color': this.spinnerColor
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  spinnerColor?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  spinnerColor: '#41b883',
+})
+
+const innerStyles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    transform: `scale(${size / 164})`,
+    '--bg-color': props.color,
+    '--spinner-color': props.spinnerColor,
   }
-}
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 
 <style lang="scss" scoped>
@@ -152,7 +148,7 @@ export default {
           (6, 36px, -21px),
           (7, 36px, 21px) {
     $time: 3s; // thx to @zeakd for this formula
-    $delay: $time / 14;
+    $delay: calc($time / 14);
     .hexagon.hex_#{$index} {
       top: $top;
       left: $left;

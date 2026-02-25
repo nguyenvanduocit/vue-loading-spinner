@@ -1,41 +1,35 @@
 <template>
-    <div v-bind:style="styles" class="spinner spinner--stretch">
-      <div v-bind:style="rectStyles" class="rect rect-1"></div>
-      <div v-bind:style="rectStyles" class="rect rect-2"></div>
-      <div v-bind:style="rectStyles" class="rect rect-3"></div>
-      <div v-bind:style="rectStyles" class="rect rect-4"></div>
-      <div v-bind:style="rectStyles" class="rect rect-5"></div>
+    <div :style="styles" class="spinner spinner--stretch">
+      <div :style="rectStyles" class="rect rect-1"></div>
+      <div :style="rectStyles" class="rect rect-2"></div>
+      <div :style="rectStyles" class="rect rect-3"></div>
+      <div :style="rectStyles" class="rect rect-4"></div>
+      <div :style="rectStyles" class="rect rect-5"></div>
     </div>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    background: {
-      default: '#41b883'
-    },
-    duration: {
-      default: '1.2s'
-    }
-  },
-  computed: {
-    rectStyles () {
-      return {
-        backgroundColor: this.background,
-        animationDuration: this.duration
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  duration?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  duration: '1.2s',
+})
+
+const rectStyles = computed(() => ({
+  backgroundColor: props.color,
+  animationDuration: props.duration,
+}))
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 
 <style lang="scss" scoped>

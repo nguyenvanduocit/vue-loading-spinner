@@ -1,41 +1,81 @@
 # vue-loading-spinner
 
-> Just another collection of loading spinners with Vue.js
+> Loading spinner collection for Vue 3
 
 ## Installation
 
-``` bash
-npm install --save vue-loading-spinner
-```
-or
-
-``` bash
-yarn add vue-loading-spinner
+```bash
+bun add vue-loading-spinner
 ```
 
 ## Usage
 
-``` vue
+### Individual components
+
+```vue
 <template>
-  <div id="app">
-    <rotate-square2></rotate-square2>
-  </div>
+  <RotateSquare2 />
 </template>
 
-<script>
-  import {RotateSquare2} from 'vue-loading-spinner'
-  export default {
-    components: {
-      RotateSquare2
-    }
-  }
+<script setup>
+import { RotateSquare2 } from 'vue-loading-spinner'
 </script>
 ```
 
-## Demo
+### Plugin (register all components globally)
 
-List of all spinner: [Demo](https://nguyenvanduocit.github.io/vue-loading-spinner/)
+```ts
+import { createApp } from 'vue'
+import VueLoadingSpinner from 'vue-loading-spinner'
+import 'vue-loading-spinner/dist/vue-loading-spinner.css'
 
-## Development Setup
+const app = createApp(App)
+app.use(VueLoadingSpinner)
+```
 
-Checkout branch `develop`
+### Props
+
+All spinners accept a `size` prop (default `'40px'`). Most accept a `color` prop (default `'#41b883'`). Some accept `duration`, `secondaryColor`, or `spinnerColor`.
+
+```vue
+<Circle size="60px" />
+<DoubleBounce size="50px" color="#3498db" duration="1.5s" />
+<Hexagon size="80px" color="#e74c3c" spinner-color="#c0392b" />
+```
+
+### Composables
+
+#### `useLoading`
+
+Manage loading state with async support.
+
+```vue
+<template>
+  <Circle v-if="isLoading" />
+  <button @click="fetchData">Load</button>
+</template>
+
+<script setup>
+import { Circle, useLoading } from 'vue-loading-spinner'
+
+const { isLoading, withLoading } = useLoading()
+
+const fetchData = () => withLoading(() => fetch('/api/data'))
+</script>
+```
+
+#### `useSpinner` / `useScaledSpinner`
+
+Internal composables for building custom spinners with consistent size/scale behavior.
+
+## Available Spinners
+
+Circle, Circle2-11, CubeShadow, Diamond, DoubleBounce, Gauge, Google, Hexagon, HourGlass, Jawn, Jumper, LetterCube, MikePad, Origami, Pencil, PingPong, Plane, RotateSquare, RotateSquare2-6, ScaleOut, Socket, SpinLine, SquareGrid, Stretch, Texture, ThreeDots, TwoCube, Wave
+
+## Development
+
+```bash
+bun install
+bun run build
+bun run typecheck
+```

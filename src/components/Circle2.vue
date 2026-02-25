@@ -1,33 +1,27 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--circle-2"></div>
+  <div :style="styles" class="spinner spinner--circle-2"></div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    background: {
-      default: '#41b883'
-    },
-    color: {
-      default: '#35495e'
-    },
-    stroke: {
-      default: '5px'
-    }
-  },
-  computed: {
-    styles () {
-      return {
-        width: this.size,
-        height: this.size,
-        border: this.stroke + ' solid ' + this.background,
-        borderTopColor: this.color
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  secondaryColor?: string
+  stroke?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  secondaryColor: '#35495e',
+  stroke: '5px',
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+  border: props.stroke + ' solid ' + props.color,
+  borderTopColor: props.secondaryColor,
+}))
 </script>
 <style lang="scss" scoped>
   .spinner {

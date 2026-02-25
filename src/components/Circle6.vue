@@ -1,7 +1,7 @@
 <template>
-    <svg v-bind:style="styles" class="spinner spinner--circle-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <svg :style="styles" class="spinner spinner--circle-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
       <g class="anim-0">
-        <circle cx="50" cy="50" r="50" v-bind:fill="background" />
+        <circle cx="50" cy="50" r="50" :fill="color" />
       </g>
       <g class="anim-1">
         <circle cx="50" cy="50" r="5" fill="white" />
@@ -21,25 +21,21 @@
       </g>
     </svg>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    background: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 <style lang="scss" scoped>
   /* Generated with Bounce.js. Edit at http://goo.gl/hYAzd9 */

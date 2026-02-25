@@ -1,26 +1,22 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--texture"></div>
+  <div :style="styles" class="spinner spinner--texture"></div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    styles () {
-      return {
-        width: this.size,
-        height: this.size,
-        '--bg-color': this.color
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+  '--bg-color': props.color,
+}))
 </script>
 <style lang="scss" scoped>
   .spinner {

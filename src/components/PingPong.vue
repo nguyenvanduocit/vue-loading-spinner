@@ -1,6 +1,6 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--ping-pong">
-    <div v-bind:style="innerStyles" class="spinner-inner">
+  <div :style="styles" class="spinner spinner--ping-pong">
+    <div :style="innerStyles" class="spinner-inner">
       <div class="board">
         <div class="left">
         </div>
@@ -13,36 +13,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    },
-    ballColor: {
-      default: '#f7484e'
-    }
-  },
-  computed: {
-    innerStyles () {
-      let size = parseInt(this.size)
-      return {
-        transform: 'scale(' + (size / 250) + ')',
-        '--bg-color': this.color,
-        '--ball-color': this.ballColor
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  ballColor?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  ballColor: '#f7484e',
+})
+
+const innerStyles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    transform: `scale(${size / 250})`,
+    '--bg-color': props.color,
+    '--ball-color': props.ballColor,
   }
-}
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 
 <style lang="scss" scoped>

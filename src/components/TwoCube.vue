@@ -1,39 +1,33 @@
 <template>
-    <div v-bind:style="styles" class="spinner spinner--two-cube">
-      <div v-bind:style='cubeStyles' class="cube1"></div>
-      <div v-bind:style='cubeStyles' class="cube2"></div>
+    <div :style="styles" class="spinner spinner--two-cube">
+      <div :style='cubeStyles' class="cube1"></div>
+      <div :style='cubeStyles' class="cube2"></div>
     </div>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    background: {
-      default: '#41b883'
-    },
-    duration: {
-      default: '1.8s'
-    }
-  },
-  computed: {
-    cubeStyles () {
-      return {
-        backgroundColor: this.background,
-        animationName: 'sk-cubemove',
-        animationDuration: this.duration
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  duration?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  duration: '1.8s',
+})
+
+const cubeStyles = computed(() => ({
+  backgroundColor: props.color,
+  animationName: 'sk-cubemove',
+  animationDuration: props.duration,
+}))
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 
 <style lang="scss" scoped>

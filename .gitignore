@@ -1,11 +1,10 @@
 .DS_Store
 node_modules/
 npm-debug.log
-/yarn.lock
-/src/App.vue
-/src/main.js
-/dist/static
-/dist/index.html
-/config
+bun.lock
 
-\.idea/
+.idea/
+.omc/
+
+test-results/
+playwright-report/

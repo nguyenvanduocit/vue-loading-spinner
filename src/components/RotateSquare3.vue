@@ -1,5 +1,5 @@
 <template>
-    <svg  v-bind:style="styles" class="spinner spinner--cube" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500.00001 500.00001">
+    <svg  :style="styles" class="spinner spinner--cube" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500.00001 500.00001">
       <g :fill="color">
         <path class="b0" d="M66.734 66.734v366.533h366.532V66.734H66.734zm15 15h336.532v336.533H81.734V81.734z">
         </path>
@@ -15,25 +15,21 @@
     </svg>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 
 <style lang="scss" scoped>

@@ -1,31 +1,26 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--rotate-square"></div>
+  <div :style="styles" class="spinner spinner--rotate-square"></div>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    background: {
-      default: '#41b883'
-    },
-    duration: {
-      default: '1.2s'
-    }
-  },
-  computed: {
-    styles () {
-      return {
-        backgroundColor: this.background,
-        width: this.size,
-        height: this.size,
-        animationDuration: this.duration
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  duration?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  duration: '1.2s',
+})
+
+const styles = computed(() => ({
+  backgroundColor: props.color,
+  width: props.size,
+  height: props.size,
+  animationDuration: props.duration,
+}))
 </script>
 
 <style lang="scss" scoped>

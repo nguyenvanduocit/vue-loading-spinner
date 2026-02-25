@@ -1,41 +1,35 @@
 <template>
-  <div v-bind:style="styles" class="spinner">
-    <div v-bind:style="blobStyles" class="blob top"></div>
-    <div v-bind:style="blobStyles" class="blob bottom"></div>
-    <div v-bind:style="blobStyles" class="blob left"></div>
-    <div v-bind:style="moveBlobStyles" class="blob move-blob"></div>
+  <div :style="styles" class="spinner">
+    <div :style="blobStyles" class="blob top"></div>
+    <div :style="blobStyles" class="blob bottom"></div>
+    <div :style="blobStyles" class="blob left"></div>
+    <div :style="moveBlobStyles" class="blob move-blob"></div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    blobStyles () {
-      return {
-        borderColor: this.color
-      }
-    },
-    moveBlobStyles () {
-      return {
-        borderColor: this.color,
-        background: this.color
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+})
+
+const blobStyles = computed(() => ({
+  borderColor: props.color,
+}))
+
+const moveBlobStyles = computed(() => ({
+  borderColor: props.color,
+  background: props.color,
+}))
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 <style lang="scss" scoped>
   .spinner {

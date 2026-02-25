@@ -1,6 +1,6 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--mikepad">
-    <div v-bind:style="innerStyles" class="spinner-inner">
+  <div :style="styles" class="spinner spinner--mikepad">
+    <div :style="innerStyles" class="spinner-inner">
       <div class="binding"></div>
       <div class="pad">
         <div class="line line1"></div>
@@ -10,32 +10,29 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    innerStyles () {
-      let size = parseInt(this.size)
-      return {
-        transform: 'scale(' + (size / 31) + ')',
-        '--bg-color': this.color
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+})
+
+const innerStyles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    transform: `scale(${size / 31})`,
+    '--bg-color': props.color,
   }
-}
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 <style lang="scss" scoped>
   .spinner{

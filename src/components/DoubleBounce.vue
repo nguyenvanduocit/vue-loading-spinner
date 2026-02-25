@@ -1,38 +1,32 @@
 <template>
-    <div v-bind:style="styles" class="spinner spinner--double-bounce">
-      <div class="double-bounce1" v-bind:style="bounceStyle"></div>
-      <div class="double-bounce2" v-bind:style="bounceStyle"></div>
+    <div :style="styles" class="spinner spinner--double-bounce">
+      <div class="double-bounce1" :style="bounceStyle"></div>
+      <div class="double-bounce2" :style="bounceStyle"></div>
     </div>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    background: {
-      default: '#41b883'
-    },
-    duration: {
-      default: '2.0s'
-    }
-  },
-  computed: {
-    bounceStyle () {
-      return {
-        backgroundColor: this.background,
-        animationDuration: this.duration
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  duration?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  duration: '2.0s',
+})
+
+const bounceStyle = computed(() => ({
+  backgroundColor: props.color,
+  animationDuration: props.duration,
+}))
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 
 <style lang="scss" scoped>

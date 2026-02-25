@@ -1,3 +1,5 @@
+import type { App, Plugin } from 'vue'
+
 import Circle from './components/Circle.vue'
 import Circle2 from './components/Circle2.vue'
 import Circle3 from './components/Circle3.vue'
@@ -29,6 +31,7 @@ import RotateSquare2 from './components/RotateSquare2.vue'
 import RotateSquare3 from './components/RotateSquare3.vue'
 import RotateSquare4 from './components/RotateSquare4.vue'
 import RotateSquare5 from './components/RotateSquare5.vue'
+import RotateSquare6 from './components/RotateSquare6.vue'
 import ScaleOut from './components/ScaleOut.vue'
 import Socket from './components/Socket.vue'
 import SpinLine from './components/SpinLine.vue'
@@ -38,6 +41,9 @@ import Texture from './components/Texture.vue'
 import ThreeDots from './components/ThreeDots.vue'
 import TwoCube from './components/TwoCube.vue'
 import Wave from './components/Wave.vue'
+
+export { useSpinner, useScaledSpinner } from './composables/useSpinner'
+export { useLoading } from './composables/useLoading'
 
 export {
   Circle,
@@ -71,6 +77,7 @@ export {
   RotateSquare3,
   RotateSquare4,
   RotateSquare5,
+  RotateSquare6,
   ScaleOut,
   Socket,
   SpinLine,
@@ -79,5 +86,59 @@ export {
   Texture,
   ThreeDots,
   TwoCube,
-  Wave
+  Wave,
 }
+
+const components: Record<string, any> = {
+  Circle,
+  Circle2,
+  Circle3,
+  Circle4,
+  Circle5,
+  Circle6,
+  Circle7,
+  Circle8,
+  Circle9,
+  Circle10,
+  Circle11,
+  CubeShadow,
+  Diamond,
+  DoubleBounce,
+  Gauge,
+  Google,
+  Hexagon,
+  HourGlass,
+  Jawn,
+  Jumper,
+  LetterCube,
+  MikePad,
+  Origami,
+  Pencil,
+  PingPong,
+  Plane,
+  RotateSquare,
+  RotateSquare2,
+  RotateSquare3,
+  RotateSquare4,
+  RotateSquare5,
+  RotateSquare6,
+  ScaleOut,
+  Socket,
+  SpinLine,
+  SquareGrid,
+  Stretch,
+  Texture,
+  ThreeDots,
+  TwoCube,
+  Wave,
+}
+
+const VueLoadingSpinner: Plugin = {
+  install(app: App) {
+    for (const [name, component] of Object.entries(components)) {
+      app.component(name, component)
+    }
+  },
+}
+
+export default VueLoadingSpinner

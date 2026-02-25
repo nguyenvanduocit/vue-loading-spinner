@@ -1,28 +1,27 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--circle-7">
+  <div :style="styles" class="spinner spinner--circle-7">
     <div class="spinner-inner">
 
     </div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    }
-  },
-  computed: {
-    styles () {
-      let size = parseInt(this.size)
-      return {
-        width: this.size,
-        height: this.size,
-        transform: 'scale(' + (size / 75) + ')'
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+}>(), {
+  size: '40px',
+})
+
+const styles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    width: props.size,
+    height: props.size,
+    transform: 'scale(' + (size / 75) + ')',
   }
-}
+})
 </script>
 <style lang="scss" scoped>
   $loader-color: #41b883;

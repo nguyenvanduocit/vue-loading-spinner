@@ -1,42 +1,38 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--spin-line">
-    <div v-bind:style="lineStyles" class="spinner-inner">
+  <div :style="styles" class="spinner spinner--spin-line">
+    <div :style="lineStyles" class="spinner-inner">
 
     </div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    },
-    stroke: {
-      default: '5px'
-    }
-  },
-  computed: {
-    lineStyles () {
-      return {
-        width: this.size,
-        height: this.stroke,
-        background: this.color,
-        borderRadius: this.stroke
-      }
-    },
-    styles () {
-      let size = parseInt(this.size)
-      return {
-        width: this.size,
-        height: this.size,
-        transform: 'scale(' + (size / 75) + ')'
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  stroke?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  stroke: '5px',
+})
+
+const lineStyles = computed(() => ({
+  width: props.size,
+  height: props.stroke,
+  background: props.color,
+  borderRadius: props.stroke,
+}))
+
+const styles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    width: props.size,
+    height: props.size,
+    transform: 'scale(' + (size / 75) + ')',
   }
-}
+})
 </script>
 <style lang="scss" scoped>
   .spinner{

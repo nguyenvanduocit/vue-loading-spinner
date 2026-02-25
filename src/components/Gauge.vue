@@ -3,29 +3,29 @@
     <div :style="innerStyles" class="spinner-inner"></div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    }
-  },
-  computed: {
-    innerStyles () {
-      let size = parseInt(this.size)
-      return {
-        transform: 'scale(' + (size / 60) + ')'
-      }
-    },
-    styles () {
-      let size = parseInt(this.size)
-      return {
-        width: this.size,
-        height: size / 2 + 'px'
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+}>(), {
+  size: '40px',
+})
+
+const innerStyles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    transform: 'scale(' + (size / 60) + ')',
   }
-}
+})
+
+const styles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    width: props.size,
+    height: size / 2 + 'px',
+  }
+})
 </script>
 <style lang="scss" scoped>
   .spinner{

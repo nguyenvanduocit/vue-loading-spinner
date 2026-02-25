@@ -1,6 +1,6 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--socker">
-    <div v-bind:style="innerStyles" class="spinner-inner">
+  <div :style="styles" class="spinner spinner--socker">
+    <div :style="innerStyles" class="spinner-inner">
       <div class="cube panelLoad">
         <div v-for="{side, letter} of faces" :key="side" :class="`cube-face cube-face-${side}`">{{ letter }}</div>
       </div>
@@ -8,45 +8,39 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    letters: {
-      type: Array,
-      default: () => ['A', 'E', 'G', 'O', 'N', 'P'],
-      validator: letters => letters.length === 6
-    },
-    color: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    innerStyles () {
-      let size = parseInt(this.size) / 2
-      return {
-        transform: 'scale(' + (size / 75) + ')',
-        '--bg-color': this.color
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    },
-    faces () {
-      const faces = ['front', 'back', 'left', 'right', 'bottom', 'top']
+<script setup lang="ts">
+import { computed } from 'vue'
 
-      return faces.map((face, index) => ({
-        side: face,
-        letter: this.letters[index]
-      }))
-    }
+const props = withDefaults(defineProps<{
+  size?: string
+  letters?: string[]
+  color?: string
+}>(), {
+  size: '40px',
+  letters: () => ['A', 'E', 'G', 'O', 'N', 'P'],
+  color: '#41b883',
+})
+
+const innerStyles = computed(() => {
+  const size = parseInt(props.size) / 2
+  return {
+    transform: `scale(${size / 75})`,
+    '--bg-color': props.color,
   }
-}
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
+
+const faces = computed(() => {
+  const faceNames = ['front', 'back', 'left', 'right', 'bottom', 'top']
+  return faceNames.map((face, index) => ({
+    side: face,
+    letter: props.letters[index],
+  }))
+})
 </script>
 
 <style lang="scss" scoped>

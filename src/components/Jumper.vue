@@ -1,35 +1,30 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--jumper">
-    <div v-bind:style="innerStyles" ></div>
-    <div v-bind:style="innerStyles" ></div>
-    <div v-bind:style="innerStyles" ></div>
+  <div :style="styles" class="spinner spinner--jumper">
+    <div :style="innerStyles" ></div>
+    <div :style="innerStyles" ></div>
+    <div :style="innerStyles" ></div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '50px'
-    },
-    color: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    styles () {
-      return {
-        width: this.size,
-        height: this.size,
-      }
-    },
-    innerStyles() {
-      return {
-        ...this.styles,
-        '--bg-color': this.color
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+}>(), {
+  size: '50px',
+  color: '#41b883',
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
+
+const innerStyles = computed(() => ({
+  ...styles.value,
+  '--bg-color': props.color,
+}))
 </script>
 <style lang="scss" scoped>
   .spinner{

@@ -1,63 +1,47 @@
 {
   "name": "vue-loading-spinner",
-  "version": "1.0.11",
-  "description": "Loading spinner collection for Vuejs",
-  "author": "nguyenvanduoc (nguyenvanduocit@gmail.com)",
+  "version": "2.0.0",
+  "description": "Loading spinner collection for Vue 3",
+  "type": "module",
+  "main": "./dist/vue-loading-spinner.umd.cjs",
+  "module": "./dist/vue-loading-spinner.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue-loading-spinner.js",
+      "require": "./dist/vue-loading-spinner.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "build": "vite build",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "playwright test",
+    "test:all": "vitest run && playwright test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/nguyenvanduocit/vue-loading-spinner.git"
   },
-  "main": "src/index.js",
-  "dependencies": {
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "vue": "^2.3.3"
+  "peerDependencies": {
+    "vue": "^3.3.0"
   },
   "devDependencies": {
-    "url-loader": "^0.5.8",
-    "autoprefixer": "^7.1.2",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-env": "^1.3.2",
-    "babel-preset-stage-2": "^6.22.0",
-    "babel-register": "^6.22.0",
-    "chalk": "^2.0.1",
-    "connect-history-api-fallback": "^1.3.0",
-    "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.28.0",
-    "cssnano": "^3.10.0",
-    "eslint": "^3.19.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-html": "^3.1.0",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "eventsource-polyfill": "^0.9.6",
-    "extract-text-webpack-plugin": "^2.0.0",
-    "file-loader": "^0.11.1",
-    "ora": "^1.2.0",
-    "semver": "^5.3.0",
-    "shelljs": "^0.7.6",
-    "vue-loader": "^12.1.0",
-    "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.3.3",
-    "webpack": "^2.6.1"
-  },
-  "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8",
-    "ie 11"
-  ]
+    "@playwright/test": "^1.50.0",
+    "@vitejs/plugin-vue": "^5.2.0",
+    "@vue/test-utils": "^2.4.0",
+    "happy-dom": "^17.0.0",
+    "sass": "^1.83.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^3.0.0",
+    "vue": "^3.5.0",
+    "vue-tsc": "^2.2.0"
+  }
 }

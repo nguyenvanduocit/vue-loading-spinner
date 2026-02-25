@@ -1,39 +1,38 @@
 <template>
-  <span v-bind:style="styles" class="spinner spinner--rotate-diamond">
-    <div v-bind:style="diamondStyle" class='diamond'></div>
-    <div v-bind:style="diamondStyle" class='diamond'></div>
-    <div v-bind:style="diamondStyle" class='diamond'></div>
+  <span :style="styles" class="spinner spinner--rotate-diamond">
+    <div :style="diamondStyle" class='diamond'></div>
+    <div :style="diamondStyle" class='diamond'></div>
+    <div :style="diamondStyle" class='diamond'></div>
   </span>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    }
-  },
-  computed: {
-    diamondStyle () {
-      let size = parseInt(this.size)
-      return {
-        width: size / 4 + 'px',
-        height: size / 4 + 'px',
-        '--bg-color': this.color
-      }
-    },
-    styles () {
-      let size = parseInt(this.size)
-      return {
-        width: this.size,
-        height: size / 4 + 'px'
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+})
+
+const diamondStyle = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    width: size / 4 + 'px',
+    height: size / 4 + 'px',
+    '--bg-color': props.color,
   }
-}
+})
+
+const styles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    width: props.size,
+    height: size / 4 + 'px',
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -57,7 +56,7 @@ export default {
       animation: diamonds $duration $timing infinite;
       @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
-          animation-delay: -($duration / 1.5) * $i;
+          animation-delay: calc(-1 * calc($duration / 1.5) * $i);
         }
       }
     }

@@ -1,6 +1,6 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--circle-9">
-    <div v-bind:style="innerStyles" class="spinner-inner">
+  <div :style="styles" class="spinner spinner--circle-9">
+    <div :style="innerStyles" class="spinner-inner">
       <div class='loading spin-1'>
         <div class='loading spin-2'>
           <div class='loading spin-3'>
@@ -15,28 +15,26 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    }
-  },
-  computed: {
-    innerStyles () {
-      let size = parseInt(this.size)
-      return {
-        transform: 'scale(' + (size / 120) + ')'
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+}>(), {
+  size: '40px',
+})
+
+const innerStyles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    transform: 'scale(' + (size / 120) + ')',
   }
-}
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 <style lang="scss" scoped>
   .spinner{

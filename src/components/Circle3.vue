@@ -1,35 +1,30 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--circle-3"></div>
+  <div :style="styles" class="spinner spinner--circle-3"></div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    background: {
-      default: '#41b883'
-    },
-    dotSize: {
-      default () {
-        let size = parseInt(this.size)
-        return size / 3 + 1
-      }
-    }
-  },
-  computed: {
-    styles () {
-      let size = parseInt(this.size)
-      let halfSize = size / 3
-      return {
-        width: this.size,
-        height: this.size,
-        border: '0px solid ' + this.background,
-        boxShadow: '0 -' + halfSize + 'px 0 ' + this.dotSize + 'px ' + this.background + ' inset'
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  dotSize?: number
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  dotSize: 0,
+})
+
+const styles = computed(() => {
+  const size = parseInt(props.size)
+  const halfSize = size / 3
+  const dot = props.dotSize || (size / 3 + 1)
+  return {
+    width: props.size,
+    height: props.size,
+    border: '0px solid ' + props.color,
+    boxShadow: '0 -' + halfSize + 'px 0 ' + dot + 'px ' + props.color + ' inset',
   }
-}
+})
 </script>
 <style lang="scss" scoped>
   .spinner {

@@ -1,6 +1,6 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--socker">
-    <div v-bind:style="innerStyles" class="spinner-inner">
+  <div :style="styles" class="spinner spinner--socker">
+    <div :style="innerStyles" class="spinner-inner">
       <div class="gel center-gel">
         <div class="hex-brick h1"></div>
         <div class="hex-brick h2"></div>
@@ -192,36 +192,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    color: {
-      default: '#41b883'
-    },
-    secondaryColor: {
-      default: '#286b4b'
-    }
-  },
-  computed: {
-    innerStyles () {
-      let size = parseInt(this.size)
-      return {
-        transform: 'scale(' + (size / 220) + ')',
-        '--bg-color': this.color,
-        '--secondary-color': this.secondaryColor
-      }
-    },
-    styles () {
-      return {
-        width: this.size,
-        height: this.size
-      }
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+  secondaryColor?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+  secondaryColor: '#286b4b',
+})
+
+const innerStyles = computed(() => {
+  const size = parseInt(props.size)
+  return {
+    transform: `scale(${size / 220})`,
+    '--bg-color': props.color,
+    '--secondary-color': props.secondaryColor,
   }
-}
+})
+
+const styles = computed(() => ({
+  width: props.size,
+  height: props.size,
+}))
 </script>
 
 <style lang="scss" scoped>

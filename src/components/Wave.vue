@@ -1,30 +1,26 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--wave">
+  <div :style="styles" class="spinner spinner--wave">
       <div></div>
       <div></div>
       <div></div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    size: {
-      default: '40px'
-    },
-    background: {
-      default: '#41b883'
-    },
-  },
-  computed: {
-    styles () {
-      return {
-        border: '1px solid ' + this.background,
-        width: this.size,
-        height: this.size
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = withDefaults(defineProps<{
+  size?: string
+  color?: string
+}>(), {
+  size: '40px',
+  color: '#41b883',
+})
+
+const styles = computed(() => ({
+  border: '1px solid ' + props.color,
+  width: props.size,
+  height: props.size,
+}))
 </script>
 <style lang="scss" scoped>
   .spinner{
